@@ -2,6 +2,8 @@
 
 const prompt = require("prompt-sync")()
 
-const valorJantar = Number(prompt("Valor do jantar: R$"))
-const taxaGarcom = Number((valorJantar * 10) / 100)
-console.log(`Considerando a taxa de 10% do garçom (R$${taxaGarcom.toFixed(2)}), o valor total a ser pago é de R$${(valorJantar + taxaGarcom).toFixed(2)}`)
+const valorJantar = Number(prompt("Valor do jantar R$:"))
+const taxaGarcom = (valorJantar * 10) / 100
+
+console.log(`Taxa do Garçom R$:(${taxaGarcom.toFixed(2)})`)
+console.log(`Valor Total R$:${(valorJantar + taxaGarcom).toFixed(2)}`)
