@@ -2,7 +2,8 @@
 
 const prompt = require("prompt-sync")()
 
-const valorVeiculo = Number(prompt("Valor do veículo: R$"))
-const saldo = valorVeiculo / 2
-console.log(`Promoção de financiamento!`)
-console.log(`R$${saldo.toFixed(2)} de entrada com o saldo parcelado em 12x de R$${(saldo / 12).toFixed(2)}`)
+const valorVeiculo = Number(prompt("Valor do veículo R$:"))
+const entrada = valorVeiculo / 2
+
+console.log(`Entrada R$: ${entrada.toFixed(2)}`)
+console.log(`Saldo parcelado em 12x de R$${(entrada / 12).toFixed(2)}`)
