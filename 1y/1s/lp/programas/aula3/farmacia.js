@@ -1,4 +1,4 @@
-// Lê a descrição e preço de um produto e exibe o preço promocional (descontando os centavos do valor do produto)
+// Lê a descrição e preço de um produto e exibe o preço promocional (descontando os centavos do valor do produto).
 
 const prompt = require("prompt-sync")()
 
