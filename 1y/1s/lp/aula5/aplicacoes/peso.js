@@ -5,6 +5,7 @@ const prompt = require("prompt-sync")()
 const nome = prompt("Nome: ")
 const sexo = prompt("Sexo (M/F): ")
 const altura = Number(prompt("Altura: "))
+
 let peso
 
 if (sexo == 'M' || sexo == 'm') {
