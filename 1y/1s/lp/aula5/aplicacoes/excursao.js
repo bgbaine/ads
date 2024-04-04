@@ -2,14 +2,16 @@
 
 const prompt = require("prompt-sync")()
 
+const capacidade = 40
+
 const torcedores = Number(prompt("Nº de torcedores: "))
 
-console.log(`Nº de Ônibus: ${Math.ceil(torcedores / 40)}`)
+console.log(`Nº de Ônibus: ${Math.ceil(torcedores / capacidade)}`)
 
-const lugares = 40 - (torcedores % 40)
+const lugares = torcedores % capacidade
 
-if ((lugares % 40) == 0) {
+if ((lugares % capacidade) == 0) {
     console.log(`Lugares ainda disponíveis: 0`)
 } else {
-    console.log(`Lugares ainda disponíveis: ${lugares}`)
+    console.log(`Lugares ainda disponíveis: ${capacidade - lugares}`)
 }
