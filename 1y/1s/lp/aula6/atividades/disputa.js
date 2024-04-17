@@ -2,9 +2,9 @@
 
 const prompt = require("prompt-sync")()
 
-const time1 = prompt("1o time: ")
+const time1 = prompt("1º time: ")
 const gols1 = Number(prompt("Gols: "))
-const time2 = prompt("1o time: ")
+const time2 = prompt("2º time: ")
 const gols2 = Number(prompt("Gols: "))
 
 if (gols1 > gols2) {
