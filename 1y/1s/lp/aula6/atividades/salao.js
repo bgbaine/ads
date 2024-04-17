@@ -2,7 +2,7 @@
 
 const prompt = require("prompt-sync")()
 
-const cortes = Number(prompt("No de cortes: "))
+const cortes = Number(prompt("Nº de cortes: "))
 const valor = Number(prompt("Valor do corte R$: "))
 const total = cortes * valor
 
