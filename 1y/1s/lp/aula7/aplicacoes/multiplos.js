@@ -6,8 +6,8 @@ const numero = Number(prompt("Número: "))
 
 if (numero < 5) {
     console.log("Ops... Número deve ser maior ou igual a 5")
-}
-
-for (let i = 5; i <= numero; i = i + 5) {
-    console.log(i)
+} else {
+    for (let i = 5; i <= numero; i = i + 5) {
+        console.log(i)
+    }
 }
