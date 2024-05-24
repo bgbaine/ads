@@ -4,14 +4,15 @@ const prompt = require("prompt-sync")()
 
 const numeros = [] 
 
-let numero
 do {
-    numero = Number(prompt("Número: "))
+    let numero = Number(prompt("Número: "))
     
-    if (numero != 0) {
-        numeros.push(numero)
+    if (numero == 0) {
+        break
     }
-} while (numero != 0)
+    numeros.push(numero)
+
+} while (true)
 
 console.log("\nPares da Lista")
 console.log("-".repeat(30))
