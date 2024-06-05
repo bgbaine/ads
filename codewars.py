@@ -16,6 +16,17 @@
 print(narcissistic(7))
 print(narcissistic(371))
 print(narcissistic(122))
-print(narcissistic(4887)) """
+print(narcissistic(4887)) 
 
-print(sum(i for i in range(1, 15, 2)))
+
+1. no     [expression for item in iterable]
+2. if     [expression for item in iterable if] 
+3. ifelse [expression if else for item in iterable]
+
+"""
+
+nums = [54, 22, 15, 48, 332, 1265, 1, 664, 223, 156]
+evens = [num if not num % 2 else "odd" for num in nums]
+
+print(nums)
+print(evens)
