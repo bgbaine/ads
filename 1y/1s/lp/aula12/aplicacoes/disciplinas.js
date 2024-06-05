@@ -18,7 +18,6 @@ const filtro = prompt("Qual conceito filtrar: ").toUpperCase();
 
 console.log(`\nDisciplinas com ${filtro}`);
 fazLinha(17);
-
 for (let i = 0; i < disciplinas.length; i++) {
     if (conceitos[i] == filtro) {
         console.log(disciplinas[i]);
@@ -27,7 +26,6 @@ for (let i = 0; i < disciplinas.length; i++) {
 
 console.log(`\nOutros conceitos`);
 fazLinha(17);
-
 for (let i = 0; i < disciplinas.length; i++) {
     if (conceitos[i] != filtro) {
         console.log(`${disciplinas[i]} - ${conceitos[i]}`);
