@@ -9,16 +9,12 @@ const numero3 = Number(prompt("3º Número: "));
 
 let soma = 0;
 
-if (numero1 > numero2 || numero1 > numero3) {
-    soma += numero1;
-}
-
-if (numero2 > numero1 || numero2 > numero3) {
-    soma += numero2;
-}
-
-if (numero3 > numero1 || numero3 > numero1) {
-    soma += numero3;
+if (numero1 < numero2 && numero1 < numero3) {
+soma = numero2 + numero3
+} else if (numero2 < numero1 && numero2 < numero3){
+soma = n1 + numero3
+} else {
+soma = n1 + numero2
 }
 
 console.log("Soma dos 2 maiores é: %i", soma)
