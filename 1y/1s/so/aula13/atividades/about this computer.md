@@ -1,8 +1,8 @@
 - kernel
-https://openstep.bfx.re/
-OPENSTEP (NeXTSTEP) (Mach + BSD)
-hello (freeBSD)
-elementary (linux) (ubuntu) (debian)
+Rhapsody Mach (OPENSTEP) (NeXTSTEP) (Mach + BSD) (Unix)
+OPENSTEP (NeXTSTEP) (Mach + BSD) (BSD) (Unix)
+hello (freeBSD) (BSD) (Unix)
+elementary (Ubuntu) (Debian) (Linux) (GNU) (Unix)
 
 - desktop environment
 pantheon (gnome) (elementary)
