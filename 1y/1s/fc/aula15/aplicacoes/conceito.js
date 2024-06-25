@@ -8,9 +8,9 @@ const nota2 = Number(prompt("Nota 2: "));
 const nota3 = Number(prompt("Nota 3: "));
 const nota4 = Number(prompt("Nota 4: "));
 
-const media = (nota1 + (nota2 * 2) + (nota3 * 3) + nota4) / 7
+const media = (nota1 + (nota2 * 2) + (nota3 * 3) + nota4) / 7;
 
-let conceito = ''
+let conceito = '';
 
 switch (true) {
     case media >= 9 && media <= 10:
