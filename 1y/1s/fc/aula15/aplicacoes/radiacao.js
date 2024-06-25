@@ -11,6 +11,8 @@ if (indice >= .6) {
     console.log("\nO primeiro e segundo grupo devem suspender suas atividades");
 } else if (indice >= .35) {
     console.log("\nO primeiro grupo deve suspender suas atividades");
-} else {
+} else if (indice >= 0.04) {
     console.log("\nO índice de radiação é aceitável");
+} else {
+    console.log("\nO índice de radiação inválido");
 }
