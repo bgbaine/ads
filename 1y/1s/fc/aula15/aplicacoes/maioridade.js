@@ -3,7 +3,7 @@
 const prompt = require("prompt-sync")();
 
 
-const idade = Number(prompt("1º Número: "));
+const idade = Date.getFullYear() - Number(prompt("Ano de Nascimento: "));
 
 if (idade > 17) {
     console.log("Você é maior de idade");

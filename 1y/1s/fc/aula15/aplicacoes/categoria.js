@@ -2,6 +2,7 @@
 
 const prompt = require("prompt-sync")();
 
+
 const idade = Number(prompt("Idade: "));
 
 switch (true) {

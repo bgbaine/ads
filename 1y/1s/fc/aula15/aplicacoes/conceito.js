@@ -1,12 +1,7 @@
-/*
-07 - EUA que leia quatro notas obtidas por um aluno. Calcular a média usando a fórmula:
-Média = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota 4) / 7
-Informe o conceito do aluno de acordo com a tabela:
-*/
-
 // Lê quatro notas de um aluno e exibe o conceito e se o aluno foi aprovado ou não baseado na média das notas.
 
 const prompt = require("prompt-sync")();
+
 
 const nota1 = Number(prompt("Nota 1: "));
 const nota2 = Number(prompt("Nota 2: "));
@@ -36,7 +31,7 @@ switch (true) {
 }
 
 if (conceito == 'A' || conceito == 'B' || conceito == 'C') {
-    console.log("Conceito: %s\nAPROVADO", conceito);
+    console.log("\nConceito: %s\nAPROVADO", conceito);
 } else {
-    console.log("Conceito: %s\nREPROVADO", conceito);
+    console.log("\nConceito: %s\nREPROVADO", conceito);
 }
