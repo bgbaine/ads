@@ -55,7 +55,8 @@ function listagem() {
     console.log('='.repeat(30));
 
     for (let i = 0; i < modelos.length; i++) {
-        console.log("%s %s %s %s" , String(i + 1).padEnd(2), modelos[i].padEnd(25), marcas[i].padEnd(12), precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9));
+        //console.log("%s %s %s %s" , String(i + 1).padEnd(2), modelos[i].padEnd(25), marcas[i].padEnd(12), precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9));
+        console.log(`${String(i + 1).padEnd(2)}, ${modelos[i].padEnd(25)}, ${marcas[i].padEnd(12)}, ${precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9)}`);
     }
 }
 
@@ -69,7 +70,8 @@ function pesquisaMarca(marca) {
 
     for (let i = 0; i < marcas.length; i++) {
         if (marca.toLowerCase() == marcas[i].toLowerCase()) {
-            console.log("%s %s %s", String(i + 1).padEnd(2), modelos[i].padEnd(25), precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9));
+            //console.log("%s %s %s", String(i + 1).padEnd(2), modelos[i].padEnd(25), precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9));
+            console.log(`${String(i + 1).padEnd(2)}, ${modelos[i].padEnd(25)}, ${precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9)}`);
         }
     }
 }
@@ -112,6 +114,7 @@ do {
     
     const opcao = Number(prompt("Opção: "));
 
+    // pode substituir por varios if, else
     switch (opcao) {
         case 1:
             inclusao();

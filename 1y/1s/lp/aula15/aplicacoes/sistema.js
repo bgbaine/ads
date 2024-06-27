@@ -14,33 +14,42 @@ function Produto() {
 
 const produtos = [];
 
-/* function carregaDados() {
+function carregaDados() {
     if (fs.existsSync("produtos.txt")) {
-        const carros = fs.readFileSync("produtos.txt", "utf-8").split("\n");
+        const banco = fs.readFileSync("produtos.txt", "utf-8").split("\n");
+        
+        for (let i in banco) {
+            const partes = banco[i].split(';');
 
-        for (let i = 0; i < produtos.length; i++) {
-            const partes = produtos[i].split(";");
-            
-            modelos.push(partes[0]);
-            marcas.push(partes[1]);
-            precos.push(Number(partes[2]));
+            const produto = new Produto();
+
+            produto.marca = partes[0];
+            produto.nome = partes[1];
+            produto.preco = Number(partes[2]);
+            produto.quantidade = Number(partes[3]);
+
+            produtos.push(produto);
         }
     }
 }
 
 function gravaDados() {
-    const carros = [];
-
-    for (let i = 0; i < modelos.length; i++) {
-        carros.push(modelos[i] + ';' + marcas[i] + ';' + precos[i]);
+    if (produtos.length == 0) {
+        return 1;
     }
 
-    fs.writeFileSync("produtos.txt", produtos.join("\n"));
+    const banco = [];
+
+    for (let i in produtos) {
+        banco.push(produtos[i].marca + ';' + produtos[i].nome + ';' + produtos[i].preco + ';' + produtos[i].quantidade)
+    }
+
+    fs.writeFileSync("produtos.txt", banco.join("\n"));
 
     console.log("Dados salvos em arquivo...");
-} */
+}
 
-function inclusao() {
+function incluiProduto() {
     console.log("\nInclusão de Produto");
     console.log('-'.repeat(57));
 
@@ -48,7 +57,7 @@ function inclusao() {
     
     produto.marca = prompt("Marca................: ");
     produto.nome = prompt("Nome.................: ");
-    produto.preco = Number(prompt("Preço R$.............: "));
+    produto.preco = Number(prompt("Preço R$.............: ").replace(',', '.'));
     produto.quantidade = Number(prompt("Quantidade (unidades): "));
 
     produtos.push(produto);
@@ -56,15 +65,19 @@ function inclusao() {
     console.log("Ok! Produto Cadastrado com Sucesso!");
 }
 
-function listagem() {
+const dev = true;
+function listaProduto() {
+    if (produtos.length == 0) {
+        return 1;
+    }
+
     console.log("\nLista dos Produtos Cadastrados");
     console.log('-'.repeat(57));
 
-    console.log("Nº Marca.......: Nome......: Preço R$: Quantidade......:");
+    console.log("Nº Marca......: Nome......: Preço R$...: Quantidade.....:");
     console.log('='.repeat(57));
-
     for (let i in produtos) {
-        console.log(produtos[i].marca, produtos[i].nome, produtos[i].preco, produtos[i].quantidade);
+        console.log(`${(parseInt(i) + 1)} ${produtos[i].marca.padEnd(2)} ${produtos[i].nome.padStart(6)} ${produtos[i].preco.toLocaleString("pt-br", {minimumFractionDigits: 2})} ${String(produtos[i].quantidade).padStart(3)} unidades`);
     }
 }
 
@@ -72,42 +85,41 @@ function pesquisaMarca(marca) {
     console.log("\nPesquisa por Marca");
     console.log('-'.repeat(57));
 
-    console.log("Nº Nome.......: Preço R$: Quantidade.......:");
+    console.log("Nº Marca.......: Nome.......: Preço R$: Quantidade.......:");
     console.log('='.repeat(57));
 
-
-    for (let i = 0; i < marcas.length; i++) {
-        if (marca.toLowerCase() == marcas[i].toLowerCase()) {
-            console.log("%s %s %s", String(i + 1).padEnd(2), modelos[i].padEnd(25), precos[i].toLocaleString("pt-br", {minimumFractionDigits: 2}).padStart(9));
+    for (let i in produtos) {
+        if (prompt("Marca: ").toLowerCase() == (produtos[i].marca).toLowerCase()) {
+            console.log(produtos[i].marca, produtos[i].nome, produtos[i].preco, produtos[i].quantidade);
         }
     }
 }
 /*
 function pesquisaPreco(menorPreco, maiorPreco) {
     console.log("\nPesquisa por Preço");
-    console.log('-'.repeat(30));
+    console.log('-'.repeat(57));
 
 }
 
-function alteracao() {
-    console.log("\nAlteração de Preço de Veículo");
-    console.log('-'.repeat(30));
+function alteraPreco() {
+    console.log("\nAlteração de Preço de Produto");
+    console.log('-'.repeat(57));
 
-    const modelo = prompt("Modelo: ");
+    const produto = prompt("Produto: ");
 
 }
 
-function exclusao() {
-    console.log("\nExclusão de Veículo");
-    console.log('-'.repeat(30));
+function excluiProduto() {
+    console.log("\nExclusão de Produto");
+    console.log('-'.repeat(57));
 
-    const modelo = prompt("Modelo: ");
+    const produto = prompt("Produto: ");
 } */
 
 // ---------------------------------------------------- Programa Principal
 
-/* carregaDados();
- */
+carregaDados();
+
 do {
     console.log("\nSuplementos Avenida - Sistema de Gerenciamento de Estoque");
     console.log('='.repeat(57));
@@ -123,10 +135,10 @@ do {
 
     switch (opcao) {
         case 1:
-            inclusao();
+            incluiProduto();
             break;
         case 2:
-            listagem();
+            listaProduto();
             break;
         case 3:
             pesquisaMarca(prompt("Marca: "));
@@ -137,10 +149,10 @@ do {
             pesquisaPreco(menorPreco, maiorPreco);
             break;
         case 5:
-            alteracao();
+            alteraPreco();
             break;
         case 6:
-            exclusao();
+            excluiProduto();
             break;
         default:
             break;
@@ -152,5 +164,5 @@ do {
 
 } while (true)
 
-/* gravaDados();
- */
+if (dev)
+    gravaDados();
