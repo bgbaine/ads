@@ -1,7 +1,6 @@
 const prompt = require("prompt-sync")();
 const fs = require("fs");
 
-
 const modelos = [];
 const marcas = [];
 const precos = [];
