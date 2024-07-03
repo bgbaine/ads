@@ -1,10 +1,12 @@
 // ------------------------------------------------------------  Classe produto
 
-module.exports = {
-    Produto: function() {
-        let marca;
-        let nome;
-        let preco;
-        let quantidade;
+class Produto {
+    constructor() {
+        this.marca = null;
+        this.nome = null;
+        this.preco = null;
+        this.quantidade = null;
     }
-};
+}
+
+module.exports = { Produto };
