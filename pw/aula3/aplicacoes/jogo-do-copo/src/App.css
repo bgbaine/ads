@@ -1,0 +1,12 @@
+img {
+  width: 300px;
+  cursor: pointer;
+}
+
+.cor-vermelha {
+  color: red;
+}
+
+.cor-verde {
+  color: green;
+}

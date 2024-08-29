@@ -1,0 +1,53 @@
+.cor-verde {
+  color: rgb(11, 128, 11);
+}
+
+.cor-azul {
+  color: blue;
+}
+
+.cor-vermelha {
+  color: red;
+}
+
+.img-grande {
+  width: 160px;
+  height: 100px;
+}
+
+.img-pequena {
+  width: 100px;
+  height: 75px;
+}
+
+.fonte-g1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.fonte-g2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.margem-esq {
+  margin-left: 20px;
+}
+
+.margem-sup {
+  margin-top: 60px;
+}
+
+button {
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.ponteiro {
+  cursor: pointer;
+}
