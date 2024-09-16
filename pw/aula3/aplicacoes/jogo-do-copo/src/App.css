@@ -1,6 +1,5 @@
 img {
   width: 300px;
-  cursor: pointer;
 }
 
 .cor-vermelha {
@@ -9,4 +8,14 @@ img {
 
 .cor-verde {
   color: green;
+}
+
+button {
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
 }
