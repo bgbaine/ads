@@ -97,3 +97,66 @@ input {
     display: flex;
     gap: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 7rem;
+        top: 2rem;
+        right: 6.5rem;
+        bottom: 0;
+    }
+
+    header {
+        height: 35vh;
+        width: 100vw;
+        padding-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    header p {
+        font-weight: 400;
+    }
+
+    .image {
+        display: none;
+    }
+
+    main {
+        width: 100vw;
+        padding-bottom: 3rem;
+        padding-top: 1.5rem;
+    }
+
+    .titulo {
+        padding-left: 4rem;
+    }
+
+    main h2 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    main h5 {
+        font-size: 14px;
+    }
+
+    input {
+        width: 80vw;
+    }
+
+    .botao {
+        padding: 1rem 7.85rem 1rem 7.85rem;
+    }
+    
+    .redes {
+        gap: 1rem;
+    }
+}

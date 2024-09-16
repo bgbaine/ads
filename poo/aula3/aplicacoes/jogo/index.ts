@@ -35,28 +35,34 @@ while (true) {
         break;
     }
 
+    let horas: number = 0;
+
     switch (opcao) {
         case 1:
-            const horasAtaque: number = +teclado("Digite o numero de horas do treino: ")
-            heroi.treinar("ataque", horasAtaque);
+            horas = +teclado("Digite o numero de horas do treino: ")
+            heroi.treinar("ataque", horas);
+            horas = 0;
             break;
         case 2:
-            const horasDefesa: number = +teclado("Digite o numero de horas do treino: ")
-            heroi.treinar("defesa", horasDefesa);
+            horas = +teclado("Digite o numero de horas do treino: ")
+            heroi.treinar("defesa", horas);
+            horas = 0;
             break;
         case 3:
-            const horasIntelecto: number = +teclado("Digite o numero de horas do treino: ")
-            heroi.treinar("intelecto", horasIntelecto);
+            horas = +teclado("Digite o numero de horas do treino: ")
+            heroi.treinar("intelecto", horas);
+            horas = 0;
             break;
         case 4:
-            const horasDescanso: number = +teclado("Digite o numero de horas de descanso: ")
-            heroi.descansar(horasDescanso);
+            horas = +teclado("Digite o numero de horas de descanso: ")
+            heroi.descansar(horas);
+            horas = 0;
             break;
         case 5:
             heroi.lutar();
             break;
         case 6:
-            console.table(heroi);
+            console.table(heroi );
             break;
         default:
             break;
