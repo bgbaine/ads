@@ -1,0 +1,28 @@
+:root {
+    font-family: Helevetica, Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.logo {
+    height: 140px;
+}
+
+.titulos {
+    margin-left: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.btn {
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 6px;
+}

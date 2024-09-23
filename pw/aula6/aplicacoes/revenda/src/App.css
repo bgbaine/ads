@@ -1,0 +1,38 @@
+#root {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  background-color: #f00;
+  color: #fff;
+  padding: 8px;
+}
+
+header img {
+  width: 120px;
+  margin-right: 12px;
+}
+
+main {
+  display: flex;
+  color: #f00;
+  margin-left: 20px;
+}
+
+main img {
+  width: 700px;
+  height: 380px;
+  margin: 0 100px;
+  margin-top: 40px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(148, 11, 11);
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
