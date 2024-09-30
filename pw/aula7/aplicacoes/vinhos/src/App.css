@@ -1,0 +1,46 @@
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.logo {
+  height: 140px;
+}
+
+.titulos {
+  margin-left: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  border: 0;
+  color: #fff;
+  background-color: #00f;
+  font-size: 16px;
+}
+
+input[type=text], input[type=number], select {
+  padding: 10px 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 240px;
+}
+
+.imgVinho {
+  margin-left: 40px;
+  width: 240px;
+  height: 160px;
+}

@@ -1,0 +1,23 @@
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 768px;
+  text-align: center;
+}
+
+.titulo {
+  display: flex;
+  background-color: coral;
+  color: white;
+}
+
+.logo {
+  height: 120px;
+}
+
+.filme {
+  width: 140px;
+  height: 200px;
+}
