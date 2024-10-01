@@ -1,0 +1,24 @@
++---+  Restaurante Avenida
++---+  App: SugestÃ£o de Vinho
+--------------------------------------------------
+Nome:  [      ] 
+Idade: [      ]
+Prato principal: [--<selecione>--]
+                 [ Peixe Ao Molho de CamarÃ£o ]
+                 [ Picanha ao Forno ]
+                 [ Strogonoff de Frango ]
+                 [ Frango Grelhado ]
+
+Gosta de Sabores mais Complexos:
+() Sim  () NÃ£o
+
+[Exibir SugestÃ£o] [Limpar Dados] 
+--------------------------------------------------
+
+Se idade inferior a 18 anos: Fulano, vocÃª nÃ£o deve beber vinho...
+[SenÃ£o] 
+  Se gosta de sabores mais complexos: Fulano, sugerimos: Vinho Tinto
+  [SenÃ£o]
+     -> Se prato principal for Carne Vermelha: Fulano, sugerimos: Vinho Tinto
+     -> Se prato principal for Peixe: Fulano, sugerimos: Vinho RosÃ©
+     -> Outros: Fulano, sugerimos: Vinhos Suave 
