@@ -1,0 +1,51 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.fonte-normal {
+    font-weight: normal;
+}
+
+.resposta {
+    display: flex;
+    padding-top: 20px;
+}
+
+.resposta img {
+    width: 200px;
+    height: 200px;
+    padding-right: 50px;
+}
+
+.vermelho {
+    color: red;
+}
+
+.verde {
+    color: green;
+}
+
+button {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
