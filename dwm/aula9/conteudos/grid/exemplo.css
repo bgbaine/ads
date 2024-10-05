@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+.titulo {
+}
+.container {
+    /* height: 200vh; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-content: center;
+  grid-gap: 2rem;
+  /* grid-row-gap: 2rem; */
+  /* grid-column-gap: 2rem; */
+
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.875rem;
+}
+.texto {
+}
+.lista {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 0.50rem;
+}
+@media screen and (max-width:468px) {
+    .container{
+        grid-template-columns: 1fr;
+
+    }
+  }

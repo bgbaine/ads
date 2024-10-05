@@ -1,0 +1,57 @@
+@media screen and (max-width: 768px) {
+    .cabecalho {
+
+    }
+    
+    .menu {
+    
+    }
+    
+    .menu__lista {
+    
+    }
+    
+    .banner {
+    
+    }
+    
+    .banner__titulo {
+    
+    }
+    
+    .principal {
+    
+    }
+    
+    .titulo {
+    
+    }
+    
+    .texto {
+
+    }
+    
+    .receitas {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+    
+    }
+    
+    .card__conteudo {
+    
+    }
+    
+    .card__titulo {
+    
+    }
+    
+    .card__descricao {
+    
+    }
+    
+    .botao {
+    
+    }        
+}
