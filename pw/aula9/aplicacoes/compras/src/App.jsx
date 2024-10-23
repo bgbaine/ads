@@ -1,18 +1,12 @@
-/* 
-  limpar campos
-  calcular e exiber total de compras
-  instalar sooner
-  criar botao limpar lista, solicitar confirmacao e remover
-  jogar o foco na descricao, no inicio e apos cada inclusao
-*/
-
 import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { set, useForm } from 'react-hook-form'
+import { Toaster, toast } from 'sonner'
 import './App.css'
 
 function App() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, setFocus } = useForm();
   const [compras, setCompras] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const cadastrar = (data) => {
     const compras2 = [...compras];
@@ -20,10 +14,30 @@ function App() {
     setCompras(compras2);
     
     localStorage.setItem('compras', JSON.stringify(compras2));
+    
+    const total2 = total + Number(data.preco);
+    setTotal(total2);
+
+    localStorage.setItem('total', total2);
+
+    toast.success("Produto cadastrado com sucesso!");
+
+    setFocus('descricao');
     reset({
       descricao: '',
       preco: ''
     });
+  }
+
+  const limparLista = () => {
+    if (confirm("Confirma a exclusao de todos os produtos da lista?")) {
+      setCompras([]);
+      localStorage.removeItem('compras');
+      
+      setTotal(0);
+      localStorage.removeItem('total');
+    }
+    toast.success("Lista limpa com sucesso!");
   }
 
   const listaCompras = compras.map(compra => (
@@ -37,7 +51,11 @@ function App() {
     if (localStorage.getItem('compras')) {
       const compras2 = JSON.parse(localStorage.getItem('compras'));
       setCompras(compras2);
+
+      const total2 = Number(localStorage.getItem('total'));
+      setTotal(total2);
     }
+    setFocus('descricao');
   }, []);
 
   return (
@@ -82,10 +100,18 @@ function App() {
             </p>
           </form>
           <hr />
-          <h3>Lista dos Produtos Cadastrados</h3>
-          {listaCompras}
+          <div className='lista_btn'>
+            <h3>Lista de Produtos</h3>
+            <button onClick={limparLista}>Limpar Lista</button>
+          </div>
+            {listaCompras}
+          <p className='listaTotal'>
+            <span>Total</span>
+            <span>{'R$ ' + total.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
+          </p>
         </div>
       </main>
+      <Toaster position="top-right" richColors />
     </>
   )
 }

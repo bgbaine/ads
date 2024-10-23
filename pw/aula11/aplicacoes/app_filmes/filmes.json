@@ -1,0 +1,38 @@
+[
+  {
+    "titulo": "A forja - O poder da transformação",
+    "genero": "Drama",
+    "duracao": "123",
+    "foto": "https://www.cineflix.com.br/wp-content/uploads/2024/09/a-forja-482x708.png",
+    "sinopse": "Um ano depois de encerrar o ensino médio, o jovem Isaías Wright não tem planos para o futuro e é desafiado por sua mãe solo e um empresário de sucesso a começar a traçar um rumo melhor para sua vida.",
+    "nota": 0,
+    "comentario": ""
+  },
+  {
+    "titulo": "Transformers: O Início",
+    "genero": "Animação",
+    "duracao": "103",
+    "foto": "https://www.cineflix.com.br/wp-content/uploads/2024/09/transformes-one-482x708.jpg",
+    "sinopse": "A história de origem de Optimus Prime e Megatron, os maiores rivais da franquia, mas que um dia foram amigos tão ligados quanto irmãos.",
+    "nota": 0,
+    "comentario": ""
+  },
+  {
+    "titulo": "Robô Selvagem",
+    "genero": "Animação",
+    "duracao": "102",
+    "foto": "https://www.cineflix.com.br/wp-content/uploads/2024/09/robo-selvagem-482x708.jpg",
+    "sinopse": "Roz, robô naufragada, adapta-se a ilha desabitada, construindo laços com animais nativos e adotando um filhote de ganso órfão.",
+    "nota": 0,
+    "comentario": ""
+  },
+  {
+    "titulo": "Perfekta",
+    "genero": "Aventura",
+    "duracao": "93",
+    "foto": "https://www.cineflix.com.br/wp-content/uploads/2024/10/perfekta-482x708.jpg",
+    "sinopse": "Três jovens gênios precisam salvar a memória de Einstein, um robô escolar, com a ajuda do cientista Édison, em um laboratório cheio de androides inspirados por grandes mentes.",
+    "nota": 0,
+    "comentario": ""
+  }
+]
