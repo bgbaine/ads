@@ -53,6 +53,16 @@ header > div > h1 {
   text-align: justify;
 }
 
+.remover-btn {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .h2-btn {
   display: flex;
   justify-content: space-between;
@@ -70,6 +80,50 @@ header > div > h1 {
   padding: 0 30px;
 }
 
-form > button {
-  padding: 5px 2px;
+#modal-titulo {
+  padding: 15px 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+form {
+  width: 550px;
+}
+
+label {
+  font-family: Helvetica, Arial, sans-serif;
+  display: inline-block;
+  width: 90px;
+}
+
+input[type="text"], input[type="number"], input[type="url"] {
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 400px;
+}
+
+textarea {
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 400px;
+}
+
+input[type="submit"], [type="reset"] {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: blueviolet;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="reset"] {
+  background-color: red;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: end;
 }

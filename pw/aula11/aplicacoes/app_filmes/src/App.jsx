@@ -1,15 +1,9 @@
-/* 
-  estilizar o formulario
-  limpar o formulario apos inclusao ou apos clicar em limpar
-  instalar sonner e exibir mensagem de inclusao
-  criar um botao de remover filme
-*/
-
-import { useEffect, useState } from 'react';
-import { Modal } from 'react-responsive-modal';
-import { useForm } from 'react-hook-form';
-import 'react-responsive-modal/styles.css';
-import './App.css';
+import { useEffect, useState } from "react";
+import { Modal } from "react-responsive-modal";
+import { useForm } from "react-hook-form";
+import { Toaster, toast } from "sonner";
+import "react-responsive-modal/styles.css";
+import "./App.css";
 
 function App() {
   const [filmes, setFilmes] = useState([]);
@@ -17,38 +11,51 @@ function App() {
   const { register, handleSubmit, reset, setFocus } = useForm();
 
   useEffect(() => {
-    if (localStorage.getItem('filmes')) {
-      const filmes2 = JSON.parse(localStorage.getItem('filmes'));
+    if (localStorage.getItem("filmes")) {
+      const filmes2 = JSON.parse(localStorage.getItem("filmes"));
       setFilmes(filmes2);
     }
   }, []);
 
+  const removerFilme = (titulo) => {
+    if (confirm(`Deseja realmente remover o filme ${titulo}?`)) {
+      const filmes2 = filmes.filter((filme) => filme.titulo !== titulo);
+      setFilmes(filmes2);
+      localStorage.setItem("filmes", JSON.stringify(filmes2));
+      toast.error(" Filme removido com sucesso!");
+    }
+  };
+
   const listarFilmes = filmes.map((filme) => (
-    <div key={filme.titulo} className='grid-item'>
-      <img src={filme.foto} alt='Capa do Filme' />
+    <div key={filme.titulo} className="grid-item">
+      <img src={filme.foto} alt="Capa do Filme" />
       <div>
         <h3>{filme.titulo}</h3>
-        <p className='genero-duracao'>
+        <p className="genero-duracao">
           {filme.genero} - {filme.duracao} min.
         </p>
-        <p className='sinopse'>{filme.sinopse}</p>
+        <p className="sinopse">{filme.sinopse}</p>
+        <button
+          className="remover-btn"
+          onClick={() => removerFilme(filme.titulo)}
+        >
+          Remover filme
+        </button>
       </div>
     </div>
   ));
 
   const abrirForm = () => {
     setOpen(true);
-    setFocus('titulo');
+    setFocus("titulo");
 
-    reset(
-      {
-        titulo: '',
-        genero: '',
-        duracao: '',
-        foto: '',
-        sinopse: '',
-      },
-    )
+    reset({
+      titulo: "",
+      genero: "",
+      duracao: "",
+      foto: "",
+      sinopse: "",
+    });
   };
 
   const incluirFilme = (data) => {
@@ -59,74 +66,74 @@ function App() {
       foto: data.foto,
       sinopse: data.sinopse,
       nota: 0,
-      comentario: ''
+      comentario: "",
     };
 
     const filmes2 = [novoFilme, ...filmes];
     setFilmes(filmes2);
-    localStorage.setItem('filmes', JSON.stringify(filmes2));
-    
+    localStorage.setItem("filmes", JSON.stringify(filmes2));
+
+    toast.success("Filme cadastrado com sucesso!");
     setOpen(false);
-  }
+  };
 
   return (
     <>
       <header>
-        <img src='./pipoca.png' alt='Cinema e Pipoca' />
+        <img src="./pipoca.png" alt="Cinema e Pipoca" />
         <div>
           <h1>App Controle de Filmes</h1>
           <h2>Cadastro e Avaliacao de Pessoal e Filmes</h2>
         </div>
       </header>
       <main>
-        <div className='h2-btn'>
+        <div className="h2-btn">
           <h2>Cadastro de Filmes</h2>
           <button onClick={abrirForm}>Adicionar</button>
         </div>
-        <div className='grid-filmes'>{listarFilmes}</div>
+        <div className="grid-filmes">{listarFilmes}</div>
       </main>
       <Modal open={open} onClose={() => setOpen(false)} center>
-        <h2>Inclusao de Filmes</h2>
+        <h2 id="modal-titulo">Inclusao de Filmes</h2>
         <form onSubmit={handleSubmit(incluirFilme)}>
           <p>
-            <label htmlFor='titulo'>Título</label>
+            <label htmlFor="titulo">Título</label>
+            <input type="text" id="titulo" required {...register("titulo")} />
+          </p>
+          <p>
+            <label htmlFor="genero">Gênero</label>
+            <input type="text" id="genero" required {...register("genero")} />
+          </p>
+          <p>
+            <label htmlFor="duracao">Duração (min)</label>
             <input
-              type='text'
-              id='titulo'
+              type="number"
+              id="duracao"
               required
-              {...register('titulo')}
+              {...register("duracao")}
             />
           </p>
           <p>
-            <label htmlFor='genero'>Gênero</label>
-            <input type='text' id='genero' required {...register('genero')} />
+            <label htmlFor="foto">URL da Foto</label>
+            <input type="url" id="foto" required {...register("foto")} />
           </p>
           <p>
-            <label htmlFor='duracao'>Duração (min)</label>
-            <input
-              type='number'
-              id='duracao'
-              required
-              {...register('duracao')}
-            />
-          </p>
-          <p>
-            <label htmlFor='foto'>URL da Foto</label>
-            <input type='url' id='foto' required {...register('foto')} />
-          </p>
-          <p>
-            <label htmlFor='sinopse'>Sinopse</label>
+            <label htmlFor="sinopse">Sinopse</label>
             <textarea
-              id='sinopse'
+              id="sinopse"
               required
-              {...register('sinopse')}
+              {...register("sinopse")}
               rows={3}
             ></textarea>
           </p>
-          <input type='submit' value='Cadastrar' />
-          <input type='reset' value='Limpar' />
+          <div className="form-btn">
+            <input type="reset" value="Limpar" />
+            &nbsp;&nbsp;
+            <input type="submit" value="Cadastrar" />
+          </div>
         </form>
       </Modal>
+      <Toaster position="top-right" richColors />
     </>
   );
 }
