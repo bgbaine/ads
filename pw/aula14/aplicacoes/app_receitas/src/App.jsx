@@ -25,11 +25,11 @@ function App() {
   return (
     <>
       <Header />
-      <body className="bg-slate-200">
-        <div className="grid grid-cols-4 gap-10 py-10 px-10">
+      <main className="bg-slate-200">
+        <section className="grid grid-cols-4 gap-10 py-10 px-10">
           {listarReceitas}
-        </div>
-      </body>
+        </section>
+      </main>
       <Footer />
     </>
   );

@@ -1,37 +1,63 @@
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-function ReceitaDetalhes({ receitas }) {
-  const { id } = useParams(); // Get the recipe ID from the URL
-  const receita = receitas.find((r) => r.id === id); // Find the recipe by ID
+function ReceitaDetails() {
+  const { id } = useParams();
+  const [receita, setReceita] = useState(null);
+
+  useEffect(() => {
+    const receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+    const receita2 = receitas.find((receita) => receita.id === id);
+    setReceita(receita2);
+  }, [id]);
 
   if (!receita) {
-    return <p>Receita não encontrada.</p>;
+    return <div>Receita não encontrada</div>;
   }
 
   return (
-    <div className="p-10">
-      <h1 className="text-2xl font-bold">{receita.nome}</h1>
-      <img src={receita.foto} alt={receita.nome} className="w-80" />
-      <p className="text-lg">{receita.descricao}</p>
-      <p>
-        <strong>Categoria:</strong> {receita.categoria}
-      </p>
-      <p>
-        <strong>Tempo:</strong> {receita.tempo} minutos
-      </p>
-
-      <h2 className="mt-5 text-xl font-semibold">Preparo:</h2>
-      <ul className="list-disc pl-5">
-        {receita.preparo.map((passo, index) => (
-          <li key={index}>{passo}</li>
-        ))}
-      </ul>
-
-      <p>
-        <strong>Avaliação:</strong> {receita.nota}
-      </p>
-    </div>
+    <>
+      <Header />
+      <main className="bg-slate-200 flex flex-col justify-center items-center">
+        <section className="bg-white m-8 px-40 py-16 rounded-lg shadow-slate-500 shadow-md">
+          <h1 className="text-5xl font-bold pt-4 pb-2">{receita.nome}</h1>
+          <div className="flex flex-col items-center">
+            <img
+              className="w-[60rem] rounded-lg pt-8"
+              src={receita.foto}
+              alt="Foto da Receita"
+            />
+            <p className="font-bold text-3xl pt-4 pb-2">
+              Tempo de Preparo: {receita.tempo} min
+            </p>
+          </div>
+          <p className="pt-3 text-justify text-xl w-[70rem]">
+            {receita.descricao_completa}
+          </p>
+          <div>
+            <h3 className="font-semibold text-xl pt-4">Ingredientes</h3>
+            <ul className="list-disc pl-6">
+              {receita.ingredientes.map((ingrediente) => (
+                <li>{ingrediente}</li>
+              ))}
+            </ul>
+            <h3 className="font-semibold text-xl pt-4">Instruções</h3>
+            <p>
+              {receita.preparo.map((preparo) => (
+                <p>{preparo}</p>
+              ))}
+            </p>
+          </div>
+          <div className="flex flex-col">
+            <h4 className="text-2xl pt-8">Avalie a receita:</h4>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
 
-export default ReceitaDetalhes;
+export default ReceitaDetails;
