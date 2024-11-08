@@ -1,0 +1,35 @@
+header {
+  background-color: rgb(183, 17, 17);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-titulo {
+  display: flex;
+}
+
+header img {
+  width: 120px;
+  margin: 10px;
+  margin-right: 20px;
+}
+
+header > h1 {
+  font-style: italic;
+}
+
+.div-links {
+  margin: 24px 30px 0 0;
+}
+
+.links {
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links:hover {
+  text-decoration: underline;
+}

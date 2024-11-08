@@ -1,0 +1,76 @@
+[
+  {
+    "id": "1",
+    "nome": "Bolo de Morango",
+    "categoria": "Sobremesa",
+    "tempo": "127",
+    "foto": "https://www.allrecipes.com/thmb/lD8FH3Y4LV3hJOxNWwtbV71-nFQ=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/31845-blt-wrapsFranceC44x3-784c0272c90645d5bb4c6e29e71acd52.jpg",
+    "descricao": "Um bolo de morango delicioso e leve, coberto com um chantilly suave.",
+    "preparo": [
+      "Prepare a massa do bolo com farinha, açúcar, ovos e leite.",
+      "Asse a massa até dourar e esfrie.",
+      "Bata o chantilly e cubra o bolo.",
+      "Decore com morangos frescos e sirva gelado."
+    ],
+    "nota": "4"
+  },
+  {
+    "id": "2",
+    "nome": "Chocolate Quente da Tarde",
+    "categoria": "Lanches",
+    "tempo": "123",
+    "foto": "https://www.allrecipes.com/thmb/lD8FH3Y4LV3hJOxNWwtbV71-nFQ=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/31845-blt-wrapsFranceC44x3-784c0272c90645d5bb4c6e29e71acd52.jpg",
+    "descricao": "Uma bebida cremosa e reconfortante, feita com chocolate de alta qualidade.",
+    "preparo": [
+      "Derreta o chocolate em uma panela com um pouco de leite.",
+      "Adicione o leite restante e misture até ficar homogêneo.",
+      "Acrescente canela e um toque de baunilha.",
+      "Sirva com chantilly por cima."
+    ],
+    "nota": "5"
+  },
+  {
+    "id": "3",
+    "nome": "Espetinhos de Legumes",
+    "categoria": "Prato",
+    "tempo": "103",
+    "foto": "https://www.allrecipes.com/thmb/lD8FH3Y4LV3hJOxNWwtbV71-nFQ=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/31845-blt-wrapsFranceC44x3-784c0272c90645d5bb4c6e29e71acd52.jpg",
+    "descricao": "Espetinhos suculentos de legumes frescos e marinados.",
+    "preparo": [
+      "Corte a carne em cubos e tempere com sal, pimenta e ervas.",
+      "Monte os espetos alternando carne e legumes.",
+      "Grelhe até a carne atingir o ponto desejado.",
+      "Sirva com molho de alho e cebola."
+    ],
+    "nota": "3"
+  },
+  {
+    "id": "4",
+    "nome": "Frango Tropical",
+    "categoria": "Prato",
+    "tempo": "102",
+    "foto": "https://www.allrecipes.com/thmb/lD8FH3Y4LV3hJOxNWwtbV71-nFQ=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/31845-blt-wrapsFranceC44x3-784c0272c90645d5bb4c6e29e71acd52.jpg",
+    "descricao": "Frango empanado e crocante servido com uma salada fresca de frutas tropicais.",
+    "preparo": [
+      "Empane o frango com farinha de rosca e frite até dourar.",
+      "Prepare a salada com manga, abacaxi e melancia.",
+      "Sirva o frango crocante acompanhado da salada tropical."
+    ],
+    "nota": "4"
+  },
+  {
+    "id": "5",
+    "nome": "Wraps de Abacate",
+    "categoria": "Lanches",
+    "tempo": "93",
+    "foto": "https://www.allrecipes.com/thmb/lD8FH3Y4LV3hJOxNWwtbV71-nFQ=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/31845-blt-wrapsFranceC44x3-784c0272c90645d5bb4c6e29e71acd52.jpg",
+    "descricao": "Wraps nutritivos recheados com quinoa, abacate, pepino e tomate.",
+    "preparo": [
+      "Cozinhe a quinoa e deixe esfriar.",
+      "Corte o abacate, pepino e tomate em tiras.",
+      "Monte os wraps com os ingredientes e regue com azeite de oliva.",
+      "Sirva como lanche leve ou entrada."
+    ],
+    "nota": "3"
+  }
+]
