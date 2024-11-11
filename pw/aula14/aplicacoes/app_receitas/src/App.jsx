@@ -14,12 +14,7 @@ function App() {
   }, []);
 
   const listarReceitas = receitas.map((receita) => (
-    <ReceitaItem
-      key={receita.nome}
-      receita={receita}
-      receitas={receitas}
-      setReceitas={setReceitas}
-    />
+    <ReceitaItem key={receita.nome} receita={receita} />
   ));
 
   return (

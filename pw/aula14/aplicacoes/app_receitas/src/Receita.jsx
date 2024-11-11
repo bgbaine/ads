@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import EstrelasAvaliacao from "./components/EstrelasAvaliacao";
 
-function ReceitaDetails() {
+function Receita() {
   const { id } = useParams();
   const [receita, setReceita] = useState(null);
 
@@ -37,21 +38,21 @@ function ReceitaDetails() {
             {receita.descricao_completa}
           </p>
           <div>
-            <h3 className="font-semibold text-xl pt-4">Ingredientes</h3>
-            <ul className="list-disc pl-6">
+            <h3 className="font-semibold text-2xl pt-4">Ingredientes</h3>
+            <ul className="list-disc pl-8 pt-3">
               {receita.ingredientes.map((ingrediente) => (
-                <li>{ingrediente}</li>
+                <li className="text-lg">{ingrediente}</li>
               ))}
             </ul>
-            <h3 className="font-semibold text-xl pt-4">Instruções</h3>
-            <p>
+            <h3 className="font-semibold text-2xl pt-4 pb-5">Instruções</h3>
+            <ol className="list-decimal pl-8">
               {receita.preparo.map((preparo) => (
-                <p>{preparo}</p>
+                <li className="text-lg">{preparo}</li>
               ))}
-            </p>
+            </ol>
           </div>
-          <div className="flex flex-col">
-            <h4 className="text-2xl pt-8">Avalie a receita:</h4>
+          <div className="flex items-center pt-8">
+            <EstrelasAvaliacao receita={receita} />
           </div>
         </section>
       </main>
@@ -60,4 +61,4 @@ function ReceitaDetails() {
   );
 }
 
-export default ReceitaDetails;
+export default Receita;
