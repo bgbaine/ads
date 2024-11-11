@@ -49,7 +49,7 @@
   {
     "id": "3",
     "nome": "Espetinhos de Legumes",
-    "categoria": "Prato",
+    "categoria": "Prato Principal",
     "tempo": "103",
     "foto": "https://img.cybercook.com.br/receitas/396/espetinho-vegano-de-legumes.jpeg",
     "descricao": "Espetinhos suculentos de legumes frescos e marinados.",
@@ -73,7 +73,7 @@
   {
     "id": "4",
     "nome": "Frango Tropical",
-    "categoria": "Prato",
+    "categoria": "Prato Principal",
     "tempo": "102",
     "foto": "https://comercialzaffari.com.br/wp-content/uploads/2022/09/Salada-de-frango.jpg",
     "descricao": "Frango empanado e crocante servido com uma salada fresca de frutas tropicais.",
@@ -145,7 +145,7 @@
   {
     "id": "7",
     "nome": "Macarrão ao Pesto",
-    "categoria": "Prato",
+    "categoria": "Prato Principal",
     "tempo": "60",
     "foto": "https://img.cybercook.com.br/receitas/985/macarrao-ao-pesto-2.jpeg?w=350&h=230&fit=crop",
     "descricao": "Uma Macarrão fresca com molho pesto, manjericão e queijo parmesão.",

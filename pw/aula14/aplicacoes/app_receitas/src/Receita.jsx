@@ -11,6 +11,7 @@ function Receita() {
   useEffect(() => {
     const receitas = JSON.parse(localStorage.getItem("receitas")) || [];
     const receita2 = receitas.find((receita) => receita.id === id);
+    
     setReceita(receita2);
   }, [id]);
 
