@@ -26,26 +26,26 @@
   },
   {
     "id": "7",
-    "nome": "Chocolate Quente da Tarde",
-    "categoria": "Lanches",
-    "tempo": "123",
-    "foto": "https://www.nestleprofessional.com.br/sites/default/files/styles/np_recipe_detail/public/2022-06/chocolate-quente-dois-frades%20%281%29.png?itok=GvxmfU5t",
-    "descricao": "Uma bebida cremosa e reconfortante, feita com chocolate de alta qualidade.",
+    "nome": "Suco de Laranja",
+    "categoria": "Bebidas",
+    "tempo": "10",
+    "foto": "https://boanoticiabrasil.com.br/wp-content/uploads/2024/06/Beneficios-do-suco-de-laranja-como-auxilia-na-saude-intestinal-1.jpg",
+    "descricao": "Uma deliciosa bebida para relaxar, com um sabor suave e reconfortante.",
     "ingredientes": [
-      "200g de chocolate amargo ou meio amargo",
-      "2 xícaras de leite",
-      "1 colher de chá de canela em pó",
-      "1 colher de chá de essência de baunilha",
-      "Chantilly (opcional, para decorar)"
+        "4 laranjas grandes",
+        "1 colher de sopa de açúcar (opcional)",
+        "Água gelada (a gosto)",
+        "Gelo (opcional)"
     ],
     "preparo": [
-      "Derreta o chocolate em uma panela com uma xícara de leite.",
-      "Adicione o restante do leite e mexa até obter uma mistura homogênea.",
-      "Acrescente a canela e a baunilha, misture bem.",
-      "Sirva em canecas e cubra com chantilly (opcional)."
+        "Corte as laranjas ao meio e esprema o suco usando um espremedor de frutas.",
+        "Se preferir o suco mais suave, adicione um pouco de água gelada a gosto.",
+        "Adicione o açúcar se desejar adoçar o suco e misture bem.",
+        "Sirva em copos com gelo, se desejar."
     ],
     "nota": "0"
-  },
+}
+,
   {
     "id": "6",
     "nome": "Espetinhos de Legumes",
