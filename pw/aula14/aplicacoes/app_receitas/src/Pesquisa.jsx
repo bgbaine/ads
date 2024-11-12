@@ -14,7 +14,8 @@ function Pesquisa() {
     .filter(
       (receita) =>
         receita.nome.toLowerCase().includes(consulta) ||
-        receita.categoria.toLowerCase().includes(consulta)
+        receita.categoria.toLowerCase().includes(consulta) ||
+        receita.descricao.toLowerCase().includes(consulta)
     )
     .map((receita) => <ReceitaItem key={receita.id} receita={receita} />);
 

@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 function NovaReceita({ receitas, setReceitas, setOpen }) {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, setValue } = useForm();
+  const [receitaNome, setReceitaNome] = useState("");
   const [ingredientes, setIngredientes] = useState([]);
   const [instrucoes, setInstrucoes] = useState([]);
   const [ingredienteNovo, setIngredienteNovo] = useState("");
   const [instrucaoNova, setinstrucaoNova] = useState("");
 
   const adicionarReceita = (data) => {
+    if (ingredientes.length < 1) {
+      toast.warning("Insira ao menos um ingrediente!");
+      return;
+    }
+
+    if (instrucoes.length < 1) {
+      toast.warning("Insira ao menos uma instrução!");
+      return;
+    }
+
     const novaReceita = {
       id: (+JSON.parse(localStorage.getItem("receitas")).length + 1).toString(),
       nome: data.nome,
@@ -35,23 +46,43 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
   };
 
   const adicionarIngrediente = () => {
+    if (ingredienteNovo === "") {
+      toast.warning("Ingrediente não pode ser vazio!");
+      return;
+    }
+
     setIngredientes([...ingredientes, ingredienteNovo]);
     setIngredienteNovo("");
   };
 
   const adiconarInstrucao = () => {
+    if (instrucaoNova === "") {
+      toast.warning("Instrução não pode ser vazia!");
+      return;
+    }
+
     setInstrucoes([...instrucoes, instrucaoNova]);
     setinstrucaoNova("");
   };
+
+  const handleInputChange = (e) => {
+    setReceitaNome(e.target.value);
+    setValue("nome", e.target.value);
+  };
+
+  useEffect(() => {
+    register("nome");
+  }, [register]);
 
   return (
     <form
       onSubmit={handleSubmit(adicionarReceita)}
       className="space-y-6 p-7 max-w-xl mx-auto"
     >
-      <h2 className="text-4xl font-bold pb-6">Nova Receita</h2>
-
       <div className="flex flex-col">
+        <h2 className="text-4xl font-bold pb-6">
+          {receitaNome || "Nova Receita"}
+        </h2>
         <label htmlFor="nome" className="text-lg font-semibold">
           Nome da Receita
         </label>
@@ -61,7 +92,9 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
           id="nome"
           required
           placeholder="ex: Bolo de Cenoura"
-          {...register("nome")}
+          maxLength={28}
+          value={receitaNome}
+          onChange={handleInputChange}
         />
       </div>
 
@@ -75,6 +108,7 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
           rows={2}
           className="border border-slate-500 rounded-lg p-2"
           placeholder="ex: Bolo fofinho e molhadinho"
+          maxLength={80}
           {...register("descricao")}
         ></textarea>
       </div>
@@ -107,6 +141,8 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
           id="tempo"
           required
           placeholder="ex: 60"
+          min={1}
+          max={720}
           {...register("tempo")}
         />
       </div>
@@ -129,7 +165,7 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
         <label htmlFor="ingrediente" className="text-lg font-semibold">
           Ingredientes
         </label>
-        <ul className="list-disc pl-6">
+        <ul className="list-disc pl-6 pb-3">
           {ingredientes.map((ingrediente, index) => (
             <li key={index} className="text-lg">
               {ingrediente}
@@ -143,6 +179,7 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
             id="ingrediente"
             value={ingredienteNovo}
             onChange={(e) => setIngredienteNovo(e.target.value)}
+            maxLength={75}
             placeholder="ex: 2 cenouras"
           />
           <button
@@ -159,7 +196,7 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
         <label htmlFor="instrucao" className="text-lg font-semibold">
           Instruções
         </label>
-        <ul className="list-decimal pl-6">
+        <ul className="list-decimal pl-6 pb-3">
           {instrucoes.map((instrucao, index) => (
             <li key={index} className="text-lg">
               {instrucao}
@@ -172,6 +209,7 @@ function NovaReceita({ receitas, setReceitas, setOpen }) {
           onChange={(e) => setinstrucaoNova(e.target.value)}
           placeholder="ex: Bata as cenouras no liquidificador"
           rows={2}
+          maxLength={75}
           className="border border-slate-500 rounded-lg p-2"
         ></textarea>
         <button

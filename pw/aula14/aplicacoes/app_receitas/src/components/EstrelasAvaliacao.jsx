@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { toast } from "sonner";
 
 const EstrelasAvaliacao = ({ receita }) => {
   const [sobre, setSobre] = useState(0);
@@ -22,6 +23,7 @@ const EstrelasAvaliacao = ({ receita }) => {
   const avaliar = (index) => {
     const novaAvaliacao = index + 1;
     setAvaliacao(novaAvaliacao);
+    toast.success("Avaliação realizada com sucesso!");
 
     const receitas = JSON.parse(localStorage.getItem("receitas") || "[]");
 

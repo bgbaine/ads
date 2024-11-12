@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import EstrelasAvaliacao from "./components/EstrelasAvaliacao";
+import { Toaster } from "sonner";
 
 function Receita() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ function Receita() {
           <h1 className="text-5xl font-bold pt-4 pb-2">{receita.nome}</h1>
           <div className="flex flex-col items-center">
             <img
-              className="w-[60rem] rounded-lg pt-8"
+              className="w-[60rem] rounded-lg pt-8 shadow-black shadow-lg"
               src={receita.foto}
               alt="Foto da Receita"
             />
@@ -58,6 +59,7 @@ function Receita() {
         </section>
       </main>
       <Footer />
+      <Toaster position="top-right" richColors />
     </>
   );
 }

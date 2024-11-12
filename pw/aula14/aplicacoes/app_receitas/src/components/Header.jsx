@@ -49,7 +49,7 @@ function Header({ receitas, setReceitas }) {
         <input
           className="rounded-md w-80 h-12 px-4 mr-4 text-black italic shadow-red-950 shadow-md"
           type="search"
-          placeholder="O que você deseja comer hoje?"
+          placeholder="O que você deseja cozinhar hoje?"
           value={consulta}
           onChange={(e) => setConsulta(e.target.value)}
           onKeyDown={ouvirClick}
