@@ -1,0 +1,17 @@
+import { Personagem } from "./Personagem";
+import { Utils } from "./Utils/Utils";
+
+export class Warrior extends Personagem {
+  protected forca: number = Utils.randomizar(1, 1000);
+  protected habilidadeMental: number = 0;
+  protected ataque: number = this.forca * 10;
+  protected esquiva: number = Utils.randomizar(0, 50);
+  protected resistencia: number = Utils.randomizar(0, 90);
+  protected vidaMaxima: number = Utils.randomizar(1, 40_000);
+  protected vidaAtual: number = this.vidaMaxima;
+
+  constructor(protected nome: string) {
+    super(nome + " Warrior");
+    this.nome = nome + " Warrior";
+  }
+}
