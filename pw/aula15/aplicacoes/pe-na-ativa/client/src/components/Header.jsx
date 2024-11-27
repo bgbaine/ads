@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegHeart } from "react-icons/fa6";
+import { MdDiscount } from "react-icons/md";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
 import { LuShoppingCart } from "react-icons/lu";
@@ -42,7 +43,7 @@ function Header() {
 
   return (
     <>
-      <header className="sticky top-0">
+      <header className="sticky top-0 z-20">
         <div className="bg-[#1c2bf9] text-white py-6 flex items-center lg:justify-between justify-between lg:px-10 px-6 shadow-slate-500 shadow-md">
           <h1
             className="text-4xl hover:text-blue-100 cursor-pointer"
@@ -66,16 +67,20 @@ function Header() {
                 onClick={pesquisar}
               />
             </div>
-            <div className=" items-center gap-2 cursor-pointer hover:text-blue-100 hidden lg:flex">
-              <h2 className="text-[1.35rem] font-light">Lista de desejos</h2>
-              <FaRegHeart size={30} />
-            </div>
+            <Link to={"/promocoes"}>
+              <div className=" items-center justify-center gap-2 cursor-pointer hover:text-blue-100 lg:flex">
+                <h2 className="text-[1.35rem] font-light hidden lg:block">Promoções</h2>
+                <MdDiscount size={30} />
+              </div>
+            </Link>
           </div>
           <div className="flex items-center lg:gap-8 gap-2">
-            <LuShoppingCart
-              className="cursor-pointer hover:text-blue-100"
-              size={35}
-            />
+            <Link to={"/carrinho"}>
+              <LuShoppingCart
+                className="cursor-pointer hover:text-blue-100"
+                size={35}
+              />
+            </Link>
             <GoPlus
               className="cursor-pointer hover:text-blue-100"
               onClick={abrirModal}
