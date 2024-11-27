@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { Titulo } from "./components/Titulo";
 import { useEffect, useState } from "react";
+import { Estrelas } from "./components/Estrelas";
 import "./Comentarios.css";
 
 function Comentarios() {
   const { filmeId } = useParams();
   const [filme, setFilme] = useState({});
-  const [comentarios, setComentarios] = useState([]);
 
   useEffect(() => {
     async function getFilme() {
@@ -15,20 +15,17 @@ function Comentarios() {
       setFilme(filmes2);
     }
     getFilme();
+  }, [filmeId]);
 
-    async function getComentarios() {
-      const response = await fetch(`http://localhost:3000/filmes/${filmeId}`);
-      const comentarios2 = await response.json().comentarios;
-      setComentarios(comentarios2);
-    }
-    getComentarios();
-  }, []);
-
-  const listarComentarios = () => {
-    comentarios.map((comentario) => {
-      return <p key={comentario}>{comentario}</p>
-    });
-  };
+  const listaComentarios = filme.comentarios?.map((comentario, index) => (
+    <tr key={comentario}>
+      <td>{filme.nomes[index]}</td>
+      <td>{comentario}</td>
+      <td>
+        <Estrelas num={filme.notas[index]} />
+      </td>
+    </tr>
+  ));
 
   return (
     <>
@@ -39,8 +36,17 @@ function Comentarios() {
         <img src={filme.foto} alt="Capa do Filme" />
         <div>
           <h2>Comentários e Avaliações dos Usuários</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome do Usuario</th>
+                <th>Comentario sobre o filme</th>
+                <th>Nota</th>
+              </tr>
+            </thead>
+            <tbody>{listaComentarios}</tbody>
+          </table>
         </div>
-        {listarComentarios()}
       </div>
     </>
   );

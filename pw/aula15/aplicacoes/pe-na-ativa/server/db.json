@@ -1,0 +1,23 @@
+{
+  "produtos": [
+    {
+      "id": "xf24",
+      "nome": "Tênis Nike Air Zoom Cage 3",
+      "categorias": ["Corrida", "Masculino"],
+      "preco": 249.99,
+      "precoAntigo": 349.99,
+      "foto": "https://images.tcdn.com.br/img/img_prod/661406/tenis_nike_air_zoom_cage_3_12137_2_20190814171238.jpg",
+      "tamanhos": [40, 41, 42]
+    },
+    {
+      "id": "xf22",
+      "nome": "Tênis Nike Air Zoom Cage 3",
+      "categorias": ["Corrida", "Masculino"],
+      "preco": 249.99,
+      "foto": "https://images.tcdn.com.br/img/img_prod/661406/tenis_nike_air_zoom_cage_3_12137_2_20190814171238.jpg",
+      "tamanhos": [40, 41, 42]
+    }
+  ],
+  "desejos": [{ "id": "xf24" }],
+  "carrinho": [{ "id": "xf24" }]
+}

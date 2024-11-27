@@ -7,22 +7,21 @@ function Pesquisa() {
   const { register, handleSubmit } = useForm();
   const [filmes, setFilmes] = useState([]);
 
-  const pesquisaFilmes = (data) => {
+  const pesquisaFilmes = async (data) => {
     if (data.palavra.length < 2) {
       alert("Informe, no minimo, 2 caracteres para a pesquisa");
       return;
     }
 
-    if (localStorage.getItem("filmes")) {
-      const filmes2 = JSON.parse(localStorage.getItem("filmes"));
-      const filmes3 = filmes2.filter(
-        (filme) =>
-          filme.titulo.toUpperCase().includes(data.palavra.toUpperCase()) ||
-          filme.genero.toUpperCase() == data.palavra.toUpperCase()
-      );
+    const response = await fetch("http://localhost:3000/filmes");
+    const filmes2 = await response.json();
+    const filmes3 = filmes2.filter(
+      (filme) =>
+        filme.titulo.toUpperCase().includes(data.palavra.toUpperCase()) ||
+        filme.genero.toUpperCase() == data.palavra.toUpperCase()
+    );
 
-      setFilmes(filmes3);
-    }
+    setFilmes(filmes3);
   };
 
   const listaFilmes = filmes.map((filme) => (
