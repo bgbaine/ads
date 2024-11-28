@@ -58,7 +58,7 @@ function Pesquisa() {
           </p>
         )}
         <section className="flex justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-5">
+          <div className="grid grid-cols-1 lg:grid-cols-5 justify-center">
             {listaProdutos.length > 0 ? (
               listaProdutos
             ) : (

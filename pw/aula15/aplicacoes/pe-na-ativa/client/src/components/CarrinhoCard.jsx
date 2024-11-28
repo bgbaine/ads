@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { LuShoppingCart } from "react-icons/lu";
 import { calcularParcela, formatarPreco } from "../utils/produtoUtils";
 
-function ProdutoCard({ produto }) {
+function CarrinhoCard({ produto }) {
   return (
     <Link to={`/produto/${produto.id}`}>
       <div className="border border-slate-300 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-4 m-4 bg-white lg:h-[34rem]">
@@ -60,4 +60,4 @@ function ProdutoCard({ produto }) {
   );
 }
 
-export default ProdutoCard;
+export default CarrinhoCard;

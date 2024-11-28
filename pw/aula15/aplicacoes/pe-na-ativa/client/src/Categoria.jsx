@@ -55,7 +55,7 @@ function Categoria() {
         </div>
       </section>
       <section className="flex justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-4">{listaProdutos}</div>
+        <div className="grid grid-cols-1 lg:grid-cols-5">{listaProdutos}</div>
       </section>
       <Footer />
     </>

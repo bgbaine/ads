@@ -10,8 +10,6 @@ export const getProdutos = async () => {
   return data;
 };
 
-
-
 export const getProduto = async (id) => {
   const response = await fetch(`http://localhost:3000/produtos?id=${id}`);
 
@@ -24,5 +22,17 @@ export const getProduto = async (id) => {
   return data[0];
 };
 
-// export const getCarrinho
-// export const getCarrinho
+export const calcularParcela = (produto) => {
+  const valorParcela = produto.preco / 12;
+  return valorParcela.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  });
+};
+
+export const formatarPreco = (preco) => {
+  return preco.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  });
+};
