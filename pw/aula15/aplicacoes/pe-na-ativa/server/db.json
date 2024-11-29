@@ -311,7 +311,15 @@
     }
   ],
   "carrinho": [
-    { "id": "xf24", "tamanho": "41", "quantidade": 1 },
-    { "id": "xf28", "tamanho": "40", "quantidade": 2 }
+    {
+      "id": "xf24",
+      "tamanho": "41",
+      "quantidade": 1
+    },
+    {
+      "id": "xf28",
+      "tamanho": "40",
+      "quantidade": 2
+    }
   ]
 }

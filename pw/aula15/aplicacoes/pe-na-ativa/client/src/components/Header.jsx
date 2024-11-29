@@ -69,7 +69,9 @@ function Header() {
             </div>
             <Link to={"/promocoes"}>
               <div className=" items-center justify-center gap-2 cursor-pointer hover:text-blue-100 lg:flex">
-                <h2 className="text-[1.35rem] font-normal hidden lg:block">Black Friday</h2>
+                <h2 className="text-[1.35rem] font-normal hidden lg:block">
+                  Black Friday
+                </h2>
                 <MdDiscount size={30} />
               </div>
             </Link>
