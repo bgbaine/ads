@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { LuShoppingCart } from "react-icons/lu";
 import { calcularParcela, formatarPreco } from "../utils/produtoUtils";
 
 function ProdutoCard({ produto }) {

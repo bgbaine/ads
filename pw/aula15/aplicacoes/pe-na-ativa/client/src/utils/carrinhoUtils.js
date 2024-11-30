@@ -1,4 +1,5 @@
 import { getProduto } from "./produtoUtils";
+import { Toaster, toast } from "sonner";
 
 export const getCarrinho = async () => {
   const response = await fetch("http://localhost:3000/carrinho");
@@ -27,76 +28,97 @@ export const getCarrinho = async () => {
   return carrinho;
 };
 
-/* export const adicionarAoCarrinho = async (id) => {
-  // PUT
-  const response = await fetch(`http://localhost:3000/carrinho`);
-
-  if (!response.ok) {
-    console.error("Houve um erro ao conectar com a API");
+export const adicionarAoCarrinho = async (id, tamanho) => {
+  if (!tamanho) {
+    toast.error("Informe o tamanho do produto!", {duration:2000});
     return;
   }
+  const carrinho = await getCarrinho();
 
-  const data = await response.json();
-  return data[0];
-}; */
+  const produtoExistente = carrinho.find(
+    (produto) => produto.id === id && produto.tamanho == tamanho
+  );
 
-export const adicionarAoCarrinho = async (id, tamanho = "39") => {
-  // Step 1: Fetch the current carrinho data (GET request)
-  const response = await fetch("http://localhost:3000/carrinho");
+  if (produtoExistente) {
+    produtoExistente.quantidade += 1;
 
-  if (!response.ok) {
-    console.error("Houve um erro ao conectar com a API");
-    return;
+    const produtoAtualizado = {
+      id: produtoExistente.id,
+      tamanho: produtoExistente.tamanho,
+      quantidade: produtoExistente.quantidade,
+    };
+
+    fetch(`http://localhost:3000/carrinho/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(produtoAtualizado),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Produto adicionado ao carrinho com sucesso:", data);
+      })
+      .catch((error) => {
+        console.error("Erro ao adicionar o produto ao carrinho:", error);
+      });
+    toast.success(`Produto adicionado ao carrinho!`);
+  } else {
+    const novoProduto = {
+      id: id,
+      tamanho: tamanho,
+      quantidade: 1,
+    };
+
+    fetch(`http://localhost:3000/carrinho/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(novoProduto),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Produto adicionado ao carrinho:", data);
+      })
+      .catch((error) => {
+        console.error("Erro ao adicionar o produto ao carrinho:", error);
+      });
+    toast.success(`Produto adicionado ao carrinho!`);
   }
+  setTimeout(() => {
+    window.location.href = "http://localhost:5173/carrinho";
+  }, 1500);
+};
 
-  const data = await response.json(); // Consume the response body once
-
-  // Step 2: Create the new item to add to carrinho
-  const newItem = {
-    id: id,
-    tamanho: tamanho,
-    quantidade: 1,
-  };
-
-  // Step 3: Insert the new item at the beginning of the array
-  data.unshift(newItem);
-
-  // Step 4: Send a PUT request to update the carrinho
-  const updateResponse = await fetch(`http://localhost:3000/carrinho/`, {
-    method: "POST",
+export const removerDoCarrinho = async (id, setCarrinho) => {
+  const response = await fetch(`http://localhost:3000/carrinho/${id}`, {
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data), // Send the updated data back to the server
   });
 
-  if (!updateResponse.ok) {
-    console.error("Houve um erro ao atualizar o carrinho");
-    return;
-  }
-};
-
-export const removerDoCarrinho = async (id) => {
-  // DELETE
-  const response = await fetch(`http://localhost:3000/carrinho`);
-
   if (!response.ok) {
     console.error("Houve um erro ao conectar com a API");
     return;
   }
 
-  const data = await response.json();
-  return data[0];
+  setCarrinho(await getCarrinho());
+  toast.success(`Produto removido do carrinho!`, {duration:1500});
 };
 
-export const limparCarrinho = async (id) => {
-  const response = await fetch(`http://localhost:3000/carrinho`);
+export const limparCarrinho = async () => {
+  const carrinho = await getCarrinho();
 
-  if (!response.ok) {
-    console.error("Houve um erro ao conectar com a API");
-    return;
+  for (const produto of carrinho) {
+    await fetch(`http://localhost:3000/carrinho/${produto.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
-  const data = await response.json();
-  return data[0];
+  toast.success("Pedido realizado com sucesso!");
 };

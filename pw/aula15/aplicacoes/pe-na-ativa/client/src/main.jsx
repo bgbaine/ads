@@ -32,11 +32,9 @@ const router = createBrowserRouter([
   {
     path: "/categoria/:nomeCategoria",
     element: <Categoria />,
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );

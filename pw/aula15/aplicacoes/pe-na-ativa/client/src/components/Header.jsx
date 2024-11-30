@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaRegHeart } from "react-icons/fa6";
 import { MdDiscount } from "react-icons/md";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
@@ -7,6 +6,8 @@ import { LuShoppingCart } from "react-icons/lu";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import NovoProduto from "./NovoProduto";
+import { Toaster } from "sonner";
 
 function Header() {
   const [consulta, setConsulta] = useState("");
@@ -21,7 +22,7 @@ function Header() {
   };
 
   const ouvirClick = (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       pesquisar();
     }
   };
@@ -89,8 +90,13 @@ function Header() {
               size={45}
             />
           </div>
-          <Modal open={open} onClose={() => setOpen(false)} center>
-            <h2>ha</h2>
+          <Modal
+            open={open}
+            onClose={() => setOpen(false)}
+            center
+            classNames="w-4"
+          >
+            <NovoProduto setOpen={setOpen} />
           </Modal>
         </div>
       </header>
@@ -111,6 +117,7 @@ function Header() {
           />
         </div>
       </div>
+      <Toaster position="top-right" richColors />
     </>
   );
 }

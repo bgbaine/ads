@@ -8,14 +8,14 @@ import { getProdutos } from "./utils/produtoUtils";
 function App() {
   const [produtos, setProdutos] = useState([]);
 
-  useEffect(() => {
-    const fetchProdutos = async () => {
-      const data = await getProdutos();
-      if (data) {
-        setProdutos(data);
-      }
-    };
+  const fetchProdutos = async () => {
+    const data = await getProdutos();
+    if (data) {
+      setProdutos(data);
+    }
+  };
 
+  useEffect(() => {
     fetchProdutos();
   }, []);
 

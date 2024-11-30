@@ -7,6 +7,7 @@ import { formatarPreco, getProduto } from "./utils/produtoUtils";
 import { calcularParcela } from "./utils/produtoUtils";
 import Carousel from "./components/Carousel";
 import { adicionarAoCarrinho } from "./utils/carrinhoUtils";
+import { Toaster } from "sonner";
 
 function Produto() {
   const { id } = useParams();
@@ -165,6 +166,7 @@ function Produto() {
           Comprar Agora
         </button>
       </div>
+      <Toaster position="top-right" richColors />
     </>
   );
 }
