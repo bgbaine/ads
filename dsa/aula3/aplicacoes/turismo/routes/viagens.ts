@@ -2,9 +2,21 @@ import { PrismaClient } from "@prisma/client";
 import { Transporte } from "@prisma/client";
 import validarDados from "../utils/validarDados";
 import { Router } from "express";
+import { z } from "zod";
 
 const prisma = new PrismaClient();
 const router = Router();
+
+const viagemSchema = z.object({
+  id: z.number().optional(),
+  destino: z.string().min(1, "Destino é obrigatório"),
+  transporte: z.nativeEnum(Transporte),
+  dataSaida: z.string().min(1, "Data de saída é obrigatória"),
+  preco: z.number().min(0, "Preço deve ser maior que zero"),
+  duracao: z.number().min(0, "Duração deve ser maior que zero"),
+  hotel: z.string().optional(),
+  estrelas: z.number().min(1).max(5).optional(),
+});
 
 router.get("/", async (req, res) => {
   try {
@@ -108,22 +120,14 @@ router.get("/duracao/media", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { destino, transporte, dataSaida, preco, duracao, hotel, estrelas } =
-      req.body;
+    const result = viagemSchema.safeParse(req.body);
 
-    if (
-      !validarDados(
-        destino,
-        transporte,
-        dataSaida,
-        preco,
-        duracao,
-        hotel,
-        estrelas
-      )
-    ) {
+    if (!result.success) {
       res.status(400).json({ erro: "Informe todos os campos corretamente" });
     }
+
+    const { destino, transporte, dataSaida, preco, duracao, hotel, estrelas } =
+      result.data;
 
     const viagem = await prisma.viagem.create({
       data: {
