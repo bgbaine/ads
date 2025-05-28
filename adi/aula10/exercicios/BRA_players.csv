@@ -1,0 +1,645 @@
+Player,Team,Age,Position,Market Value,SofaScore
+Rafael,Sao Paulo,35,Goalkeeper,800000.0,7.09
+Jandrei,Sao Paulo,31,Goalkeeper,400000.0,7.01
+Young,Sao Paulo,22,Goalkeeper,100000.0,
+Nahuel Ferraresi,Sao Paulo,25,Center Back,3500000.0,7.09
+Alan Franco,Sao Paulo,28,Center Back,3000000.0,6.97
+Ruan Tressoldi,Sao Paulo,25,Center Back,2500000.0,
+Robert Arboleda,Sao Paulo,32,Center Back,1200000.0,7.11
+Sabino,Sao Paulo,27,Center Back,1000000.0,
+Matheus Belem,Sao Paulo,21,Center Back,800000.0,
+Jamal Lewis,Sao Paulo,26,Left Back,3500000.0,6.81
+Welington,Sao Paulo,23,Left Back,3500000.0,7.01
+Patryck,Sao Paulo,21,Left Back,1800000.0,6.84
+Igor Vinicius,Sao Paulo,27,Right Back,2500000.0,6.94
+Joao Moreira,Sao Paulo,20,Right Back,2500000.0,
+Luis Orejuela,Sao Paulo,29,Right Back,800000.0,6.75
+Rafinha,Sao Paulo,39,Right Back,200000.0,6.92
+Pablo Maia,Sao Paulo,22,Defensive Midfield,14000000.0,7.00
+Santiago Longo,Sao Paulo,26,Defensive Midfield,4000000.0,
+Jhegson Mendez,Sao Paulo,27,Defensive Midfield,1500000.0,
+Felipe Negrucci,Sao Paulo,20,Defensive Midfield,500000.0,
+Luiz Gustavo,Sao Paulo,37,Defensive Midfield,350000.0,7.02
+Rodrigo Nestor,Sao Paulo,24,Central Midfield,9000000.0,6.75
+Giuliano Galoppo,Sao Paulo,25,Central Midfield,6500000.0,6.85
+Marcos Antonio,Sao Paulo,24,Central Midfield,4000000.0,6.75
+Rodriguinho,Sao Paulo,20,Central Midfield,3000000.0,
+Damian Bobadilla,Sao Paulo,23,Central Midfield,2500000.0,6.84
+Alisson,Sao Paulo,31,Central Midfield,2000000.0,7.16
+Liziero,Sao Paulo,26,Central Midfield,1500000.0,7.13
+William Gomes,Sao Paulo,18,Left Winger,5000000.0,6.66
+Ferreirinha,Sao Paulo,26,Left Winger,5000000.0,
+Michel Araujo,Sao Paulo,28,Left Winger,1500000.0,6.77
+Lucas Moura,Sao Paulo,32,Right Winger,5000000.0,7.15
+Wellington Rato,Sao Paulo,32,Right Winger,1200000.0,6.95
+Erick,Sao Paulo,26,Right Winger,1200000.0,7.01
+Henrique Carmo,Sao Paulo,17,Right Winger,200000.0,
+Luciano Seg. Atacante,Sao Paulo,31,Unknown,2500000.0,
+Jonathan Calleri,Sao Paulo,31,Centre Forward,3500000.0,7.06
+Andre Silva,Sao Paulo,27,Centre Forward,3500000.0,6.86
+Hugo Souza,Corinthians,25,Goalkeeper,4000000.0,7.27
+Matheus Donelli,Corinthians,22,Goalkeeper,2000000.0,
+Felix Torres,Corinthians,27,Center Back,4500000.0,6.99
+Andre Ramalho,Corinthians,32,Center Back,2500000.0,7.09
+Caetano,Corinthians,25,Center Back,2000000.0,6.79
+Caca,Corinthians,25,Center Back,2000000.0,6.99
+Gustavo Henrique,Corinthians,31,Center Back,1000000.0,6.94
+Diego Palacios,Corinthians,25,Left Back,3000000.0,
+Matheus Bidu,Corinthians,25,Left Back,2000000.0,7.10
+Hugo,Corinthians,27,Left Back,1500000.0,6.93
+Matheuzinho,Corinthians,24,Right Back,4000000.0,6.97
+Leo Mana,Corinthians,20,Right Back,800000.0,
+Fagner,Corinthians,35,Right Back,400000.0,6.95
+Raniele,Corinthians,27,Defensive Midfield,3500000.0,6.99
+Jose Martinez,Corinthians,30,Defensive Midfield,3000000.0,6.90
+Ryan,Corinthians,21,Defensive Midfield,1500000.0,
+Breno Bidon,Corinthians,19,Central Midfield,5000000.0,6.93
+Maycon,Corinthians,27,Central Midfield,4000000.0,6.92
+Alex Santana,Corinthians,29,Central Midfield,2000000.0,6.89
+Charles,Corinthians,28,Central Midfield,1000000.0,6.92
+Ruan Oliveira,Corinthians,24,Central Midfield,700000.0,
+Rodrigo Garro,Corinthians,26,Attacking Midfield,9000000.0,7.36
+Igor Coronado,Corinthians,32,Attacking Midfield,4000000.0,7.16
+Matheus Araujo,Corinthians,22,Attacking Midfield,2000000.0,6.74
+Talles Magno,Corinthians,22,Left Winger,6000000.0,7.04
+Angel Romero,Corinthians,32,Left Winger,1500000.0,7.00
+Andre Carrillo,Corinthians,33,Right Winger,1500000.0,6.63
+Pedro Henrique,Corinthians,34,Right Winger,800000.0,6.80
+Yuri Alberto,Corinthians,23,Centre Forward,11000000.0,7.11
+Memphis Depay,Corinthians,30,Centre Forward,10000000.0,6.95
+Giovane,Corinthians,20,Centre Forward,4000000.0,6.69
+Pedro Raul,Corinthians,27,Centre Forward,3000000.0,6.73
+Hector Hernandez,Corinthians,29,Centre Forward,2000000.0,6.82
+John Victor,Botafogo,28,Goalkeeper,3500000.0,7.13
+Gatito Fernandez,Botafogo,36,Goalkeeper,300000.0,6.90
+Igo Gabriel,Botafogo,22,Goalkeeper,200000.0,
+Raul,Botafogo,27,Goalkeeper,100000.0,6.96
+Adryelson,Botafogo,26,Center Back,4000000.0,6.69
+Lucas Halter,Botafogo,24,Center Back,3000000.0,6.85
+Alexander Barboza,Botafogo,29,Center Back,2500000.0,7.00
+Pablo,Botafogo,33,Center Back,1200000.0,
+Bastos,Botafogo,33,Center Back,1000000.0,7.01
+Alex Telles,Botafogo,31,Left Back,6000000.0,7.15
+Hugo,Botafogo,23,Left Back,4000000.0,6.93
+Cuiabano,Botafogo,21,Left Back,3500000.0,7.11
+Marcal,Botafogo,35,Left Back,600000.0,6.88
+Vitinho,Botafogo,25,Right Back,5000000.0,6.75
+Mateo Ponte,Botafogo,21,Right Back,1500000.0,6.72
+Rafael,Botafogo,34,Right Back,400000.0,
+JP Galvao,Botafogo,23,Right Back,200000.0,
+Marlon Freitas,Botafogo,29,Defensive Midfield,4000000.0,7.13
+Allan,Botafogo,33,Defensive Midfield,3500000.0,7.16
+Gregore,Botafogo,30,Defensive Midfield,3000000.0,6.85
+Danilo Barbosa,Botafogo,28,Defensive Midfield,2500000.0,6.89
+Kaue,Botafogo,19,Defensive Midfield,700000.0,6.81
+Tche Tche,Botafogo,32,Central Midfield,1800000.0,6.87
+Thiago Almada,Botafogo,23,Attacking Midfield,27000000.0,7.38
+Jefferson Savarino,Botafogo,27,Attacking Midfield,6000000.0,7.17
+Oscar Romero,Botafogo,32,Attacking Midfield,2000000.0,6.94
+Eduardo,Botafogo,34,Attacking Midfield,1000000.0,6.99
+Matheus Martins,Botafogo,21,Left Winger,7000000.0,6.74
+Jeffinho,Botafogo,24,Left Winger,5000000.0,6.92
+Luiz Henrique,Botafogo,23,Right Winger,16000000.0,7.02
+Junior Santos,Botafogo,30,Right Winger,4000000.0,7.08
+Carlos Alberto,Botafogo,22,Right Winger,1300000.0,6.72
+Matheus Nascimento,Botafogo,20,Centre Forward,6000000.0,6.60
+Igor Jesus,Botafogo,23,Centre Forward,6000000.0,7.32
+Tiquinho Soares,Botafogo,33,Centre Forward,2700000.0,6.98
+Vitor Eudes,Fluminense,25,Goalkeeper,400000.0,
+Felipe Alves,Fluminense,36,Goalkeeper,250000.0,
+Fabio,Fluminense,44,Goalkeeper,200000.0,7.16
+Gustavo Ramalho,Fluminense,22,Goalkeeper,100000.0,
+Antonio Carlos,Fluminense,31,Center Back,1800000.0,6.96
+Ignacio,Fluminense,27,Center Back,1500000.0,7.14
+Thiago Silva,Fluminense,40,Center Back,1000000.0,7.12
+Felipe Andrade,Fluminense,22,Center Back,1000000.0,
+Manoel,Fluminense,34,Center Back,300000.0,6.83
+Felipe Melo,Fluminense,41,Center Back,150000.0,6.67
+Esquerdinha,Fluminense,18,Left Back,2200000.0,6.79
+Gabriel Fuentes,Fluminense,27,Left Back,1800000.0,7.04
+Marcelo,Fluminense,36,Left Back,1300000.0,6.94
+Diogo Barbosa,Fluminense,32,Left Back,600000.0,6.71
+Guga,Fluminense,26,Right Back,3000000.0,6.81
+Samuel Xavier,Fluminense,34,Right Back,400000.0,
+Gabriel Pires,Fluminense,31,Defensive Midfield,2500000.0,6.78
+Facundo Bernal,Fluminense,21,Defensive Midfield,1400000.0,
+Thiago Santos,Fluminense,35,Defensive Midfield,250000.0,7.02
+Martinelli,Fluminense,23,Central Midfield,9000000.0,
+Nonato,Fluminense,26,Central Midfield,1500000.0,6.76
+Renato Augusto,Fluminense,36,Central Midfield,1000000.0,6.83
+Victor Hugo,Fluminense,20,Central Midfield,,6.46
+David Terans,Fluminense,30,Attacking Midfield,4000000.0,6.90
+Lima,Fluminense,28,Attacking Midfield,3000000.0,6.87
+Ganso,Fluminense,34,Attacking Midfield,600000.0,7.05
+Keno,Fluminense,35,Left Winger,800000.0,6.90
+Jhon Arias,Fluminense,27,Right Winger,15000000.0,7.33
+Marquinhos,Fluminense,21,Right Winger,7000000.0,6.84
+Kevin Serna,Fluminense,26,Right Winger,1200000.0,
+Jan Lucumi,Fluminense,20,Right Winger,200000.0,
+Kaua Elias,Fluminense,18,Centre Forward,8000000.0,
+John Kennedy,Fluminense,22,Centre Forward,7000000.0,6.62
+Lele,Fluminense,27,Centre Forward,1700000.0,7.04
+German Cano,Fluminense,36,Centre Forward,1400000.0,6.83
+Lucas Arcanjo,Vitoria,26,Goalkeeper,1000000.0,6.93
+Muriel,Vitoria,37,Goalkeeper,200000.0,6.88
+Fintelman,Vitoria,23,Goalkeeper,50000.0,
+Yuri Sena,Vitoria,23,Goalkeeper,,
+Wagner Leonardo,Vitoria,25,Center Back,2000000.0,7.03
+Neris,Vitoria,32,Center Back,600000.0,6.76
+Camutanga,Vitoria,31,Center Back,500000.0,7.03
+Edu Ribeiro,Vitoria,24,Center Back,500000.0,
+Bruno Uvini,Vitoria,33,Center Back,450000.0,6.76
+Marco Carvalho,Vitoria,24,Center Back,150000.0,
+John Lessa,Vitoria,23,Center Back,,
+Lucas Esteves,Vitoria,24,Left Back,1200000.0,6.82
+PK,Vitoria,30,Left Back,300000.0,
+Willean Lepo,Vitoria,27,Right Back,450000.0,6.84
+Raul Caceres,Vitoria,33,Right Back,300000.0,6.75
+Luan Santos,Vitoria,25,Defensive Midfield,2000000.0,6.73
+Caio Vinicius,Vitoria,25,Defensive Midfield,1500000.0,6.79
+Filipe Machado,Vitoria,28,Defensive Midfield,1000000.0,6.82
+Ricardo Ryller,Vitoria,30,Defensive Midfield,650000.0,6.70
+Willian Oliveira,Vitoria,31,Defensive Midfield,500000.0,6.98
+Leo Naldi,Vitoria,23,Defensive Midfield,400000.0,6.74
+Jean Mota,Vitoria,30,Central Midfield,1000000.0,6.69
+Dudu Miraima,Vitoria,24,Central Midfield,,
+Matheuzinho,Vitoria,26,Attacking Midfield,2000000.0,7.28
+Alan Pedro,Vitoria,22,Attacking Midfield,,
+Everaldo,Vitoria,30,Left Winger,800000.0,6.78
+Ze Hugo,Vitoria,24,Left Winger,400000.0,6.88
+Gabriel Santiago,Vitoria,24,Left Winger,50000.0,6.74
+Gustavo Silva,Vitoria,27,Right Winger,1500000.0,6.66
+Carlos Eduardo,Vitoria,28,Right Winger,900000.0,6.73
+Osvaldo,Vitoria,37,Right Winger,175000.0,7.02
+Alerrandro,Vitoria,24,Centre Forward,3000000.0,6.97
+Janderson,Vitoria,25,Centre Forward,600000.0,6.66
+Weverton,Palmeiras,36,Goalkeeper,2000000.0,7.20
+Marcelo Lomba,Palmeiras,37,Goalkeeper,250000.0,
+Mateus,Palmeiras,22,Goalkeeper,100000.0,
+Vitor Reis,Palmeiras,18,Center Back,10000000.0,
+Murilo,Palmeiras,27,Center Back,9000000.0,7.11
+Gustavo Gomez,Palmeiras,31,Center Back,7000000.0,7.01
+Naves,Palmeiras,22,Center Back,2000000.0,
+Michel,Palmeiras,21,Center Back,1000000.0,
+Joaquin Piquerez,Palmeiras,26,Left Back,13000000.0,7.07
+Vanderlan,Palmeiras,22,Left Back,4000000.0,6.69
+Caio Paulista,Palmeiras,26,Left Back,3500000.0,6.87
+Agustin Giay,Palmeiras,20,Right Back,8000000.0,6.76
+Mayke,Palmeiras,31,Right Back,3000000.0,7.00
+Marcos Rocha,Palmeiras,35,Right Back,500000.0,7.10
+Anibal Moreno,Palmeiras,25,Defensive Midfield,10000000.0,6.99
+Fabinho,Palmeiras,22,Defensive Midfield,5000000.0,6.66
+Richard Rios,Palmeiras,24,Central Midfield,13000000.0,6.83
+Gabriel Menino,Palmeiras,24,Central Midfield,8000000.0,6.93
+Ze Rafael,Palmeiras,31,Central Midfield,4500000.0,6.88
+Raphael Veiga,Palmeiras,29,Attacking Midfield,15000000.0,7.39
+Mauricio,Palmeiras,23,Attacking Midfield,12000000.0,7.08
+Romulo,Palmeiras,23,Attacking Midfield,2000000.0,7.09
+Felipe Anderson,Palmeiras,31,Left Winger,7000000.0,7.07
+Dudu,Palmeiras,32,Left Winger,4000000.0,6.78
+Bruno Rodrigues,Palmeiras,27,Left Winger,3500000.0,7.02
+Lazaro,Palmeiras,22,Left Winger,3500000.0,6.78
+Estevao,Palmeiras,17,Right Winger,40000000.0,7.17
+Rony,Palmeiras,29,Centre Forward,9000000.0,6.86
+Jose Manuel Lopez,Palmeiras,23,Centre Forward,8000000.0,
+Luighi,Palmeiras,18,Centre Forward,2000000.0,
+Sergio Rochet,Internacional,31,Goalkeeper,3500000.0,7.03
+Ivan,Internacional,27,Goalkeeper,1500000.0,
+Anthoni,Internacional,22,Goalkeeper,800000.0,7.10
+Fabricio,Internacional,38,Goalkeeper,200000.0,7.20
+Kauan,Internacional,21,Goalkeeper,,
+Vitao,Internacional,24,Center Back,8000000.0,6.94
+Clayton,Internacional,24,Center Back,1000000.0,6.97
+Agustin Rogel,Internacional,26,Center Back,600000.0,
+Gabriel Mercado,Internacional,37,Center Back,250000.0,6.89
+Alexandro Bernabei,Internacional,24,Left Back,2000000.0,7.30
+Rene,Internacional,32,Left Back,900000.0,7.29
+Nathan,Internacional,23,Right Back,2000000.0,6.62
+Braian Aguirre,Internacional,24,Right Back,2000000.0,6.82
+Thiago Maia,Internacional,27,Defensive Midfield,6000000.0,6.96
+Bruno Gomes,Internacional,23,Defensive Midfield,2500000.0,6.95
+Fernando,Internacional,37,Defensive Midfield,2000000.0,
+Romulo,Internacional,24,Defensive Midfield,900000.0,6.75
+Bruno Henrique,Internacional,34,Central Midfield,500000.0,6.94
+Gustavo Prado,Internacional,19,Central Midfield,500000.0,6.66
+Alan Patrick,Internacional,33,Attacking Midfield,4000000.0,7.40
+Gabriel Carvalho,Internacional,17,Attacking Midfield,3000000.0,
+Hyoran,Internacional,31,Attacking Midfield,2000000.0,6.76
+Wanderson,Internacional,30,Left Winger,8000000.0,7.05
+Wesley,Internacional,25,Left Winger,5500000.0,7.21
+Bruno Tabata,Internacional,27,Right Winger,2800000.0,7.42
+Rafael Borre,Internacional,29,Centre Forward,8000000.0,6.86
+Enner Valencia,Internacional,34,Centre Forward,2500000.0,6.88
+Lucas Alario,Internacional,32,Centre Forward,1500000.0,6.71
+Lucca,Internacional,21,Centre Forward,1000000.0,6.77
+Lucca Drummond,Internacional,20,Centre Forward,150000.0,
+Mycael,Athletico,20,Goalkeeper,1500000.0,7.03
+Leo Linck,Athletico,23,Goalkeeper,1000000.0,6.97
+Matheus Soares,Athletico,19,Goalkeeper,,
+Kaique Rocha,Athletico,23,Center Back,3000000.0,7.03
+Mateo Gamarra,Athletico,23,Center Back,2000000.0,
+Luan Patrick,Athletico,22,Center Back,1300000.0,
+Lucas Belezi,Athletico,21,Center Back,550000.0,
+Thiago Heleno,Athletico,36,Center Back,400000.0,7.11
+Marcos Victor,Athletico,22,Center Back,350000.0,
+Lucas Esquivel,Athletico,22,Left Back,3000000.0,7.03
+Fernando,Athletico,25,Left Back,450000.0,6.64
+Leonardo Godoy,Athletico,29,Right Back,3800000.0,6.76
+Madson,Athletico,32,Right Back,500000.0,6.87
+Erick,Athletico,26,Defensive Midfield,4000000.0,7.00
+Gabriel,Athletico,32,Defensive Midfield,1800000.0,
+Fernandinho,Athletico,39,Defensive Midfield,400000.0,7.23
+Christian,Athletico,23,Central Midfield,7000000.0,6.86
+Praxedes,Athletico,22,Central Midfield,3500000.0,
+Ze Vitor,Athletico,24,Central Midfield,600000.0,6.67
+Felipinho,Athletico,22,Central Midfield,300000.0,6.85
+Joao Cruz,Athletico,18,Central Midfield,,6.94
+Bruno Zapelli,Athletico,22,Attacking Midfield,6000000.0,6.98
+Dudu,Athletico,18,Attacking Midfield,1000000.0,
+Nikao,Athletico,32,Attacking Midfield,750000.0,7.11
+Agustin Canobbio,Athletico,26,Left Winger,5000000.0,7.11
+Tomas Cuello,Athletico,24,Left Winger,3000000.0,7.15
+Lucas Di Yorio,Athletico,27,Centre Forward,2000000.0,6.81
+Gonzalo Mastriani,Athletico,31,Centre Forward,2000000.0,7.06
+Pablo,Athletico,32,Centre Forward,800000.0,6.89
+Julimar,Athletico,23,Centre Forward,400000.0,6.93
+Santos,Fortaleza,34,Goalkeeper,1000000.0,
+Joao Ricardo,Fortaleza,36,Goalkeeper,350000.0,7.16
+Mauricio Kozlinski,Fortaleza,33,Goalkeeper,350000.0,
+Magrao,Fortaleza,24,Goalkeeper,300000.0,
+Tomas Cardona,Fortaleza,29,Center Back,1800000.0,6.99
+Benjamin Kuscevic,Fortaleza,28,Center Back,1000000.0,6.92
+Emanuel Britez,Fortaleza,32,Center Back,800000.0,6.81
+Titi,Fortaleza,36,Center Back,200000.0,6.76
+Felipe Jonatan,Fortaleza,26,Left Back,2500000.0,6.95
+Bruno Pacheco,Fortaleza,32,Left Back,450000.0,6.78
+Eros Mancuso,Fortaleza,25,Right Back,4000000.0,7.24
+Tinga,Fortaleza,31,Right Back,1200000.0,6.99
+Ze Welison,Fortaleza,29,Defensive Midfield,2000000.0,6.84
+Lucas Sasha,Fortaleza,34,Defensive Midfield,400000.0,6.91
+Hercules,Fortaleza,23,Central Midfield,3000000.0,6.80
+Matheus Rossetto,Fortaleza,28,Central Midfield,1500000.0,6.70
+Pedro Augusto,Fortaleza,27,Central Midfield,1500000.0,6.77
+Kauan,Fortaleza,19,Central Midfield,1000000.0,
+Tomas Pochettino,Fortaleza,28,Attacking Midfield,5000000.0,7.12
+Calebe,Fortaleza,24,Attacking Midfield,2500000.0,7.09
+Kervin Andrade,Fortaleza,19,Attacking Midfield,1500000.0,6.90
+Emmanuel Martinez,Fortaleza,30,Attacking Midfield,1200000.0,6.74
+Breno Lopes,Fortaleza,28,Left Winger,2500000.0,6.97
+Moises,Fortaleza,28,Left Winger,1500000.0,6.97
+Imanol Machuca,Fortaleza,24,Right Winger,3000000.0,6.81
+Yago Pikachu,Fortaleza,32,Right Winger,1200000.0,6.94
+Marinho,Fortaleza,34,Right Winger,600000.0,7.06
+Juan Martin Lucero,Fortaleza,33,Centre Forward,1800000.0,6.95
+Renato Kayzer,Fortaleza,28,Centre Forward,1000000.0,6.75
+Agustin Rossi,Flamengo,29,Goalkeeper,7000000.0,7.04
+Matheus Cunha,Flamengo,23,Goalkeeper,3000000.0,7.05
+Leo Ortiz,Flamengo,28,Center Back,9000000.0,7.22
+Leo Pereira,Flamengo,28,Center Back,9000000.0,7.15
+Fabricio Bruno,Flamengo,28,Center Back,6000000.0,7.11
+David Luiz,Flamengo,37,Center Back,400000.0,6.94
+Cleiton,Flamengo,21,Center Back,400000.0,
+Matias Vina,Flamengo,26,Left Back,10000000.0,6.92
+Ayrton Lucas,Flamengo,27,Left Back,8000000.0,7.02
+Alex Sandro,Flamengo,33,Left Back,2000000.0,7.14
+Wesley,Flamengo,21,Right Back,6000000.0,
+Guillermo Varela,Flamengo,31,Right Back,1700000.0,6.91
+Allan,Flamengo,27,Defensive Midfield,6000000.0,6.76
+Erick Pulgar,Flamengo,30,Defensive Midfield,5000000.0,6.90
+Evertton Araujo,Flamengo,21,Defensive Midfield,2000000.0,
+Nicolas de la Cruz,Flamengo,27,Central Midfield,18000000.0,
+Carlos Alcaraz,Flamengo,21,Central Midfield,15000000.0,7.00
+Gerson,Flamengo,27,Central Midfield,14000000.0,7.16
+Giorgian de Arrascaeta,Flamengo,30,Attacking Midfield,15000000.0,
+Lorran,Flamengo,18,Attacking Midfield,12000000.0,6.85
+Everton,Flamengo,28,Left Winger,10000000.0,7.28
+Bruno Henrique,Flamengo,33,Left Winger,1800000.0,6.89
+Michael,Flamengo,28,Right Winger,7000000.0,7.18
+Gonzalo Plata,Flamengo,23,Right Winger,6000000.0,7.38
+Luiz Araujo,Flamengo,28,Right Winger,4000000.0,7.29
+Matheus Goncalves,Flamengo,19,Right Winger,3000000.0,6.88
+Pedro,Flamengo,27,Centre Forward,23000000.0,7.34
+Gabriel Barbosa,Flamengo,28,Centre Forward,7000000.0,6.74
+Carlinhos,Flamengo,27,Centre Forward,800000.0,6.89
+Marcos Felipe,Bahia,28,Goalkeeper,2000000.0,7.20
+Adriel,Bahia,23,Goalkeeper,1500000.0,
+Adriel,Bahia,23,Goalkeeper,1500000.0,
+Danilo Fernandes,Bahia,36,Goalkeeper,250000.0,
+Gabriel Souza,Bahia,20,Goalkeeper,200000.0,
+Kanu,Bahia,27,Center Back,3500000.0,7.04
+Gabriel Xavier,Bahia,23,Center Back,2500000.0,7.25
+Vitor Hugo,Bahia,33,Center Back,1500000.0,6.85
+David Duarte,Bahia,29,Center Back,1000000.0,7.09
+Victor Cuesta,Bahia,35,Center Back,500000.0,6.84
+Iago,Bahia,27,Left Back,4000000.0,6.89
+Luciano Juba,Bahia,25,Left Back,2500000.0,7.13
+Gilberto,Bahia,31,Right Back,3000000.0,7.01
+Santiago Arias,Bahia,32,Right Back,2500000.0,7.15
+Andre Dhominique,Bahia,21,Right Back,600000.0,
+Cicinho,Bahia,35,Right Back,250000.0,6.81
+Caio Alexandre,Bahia,25,Defensive Midfield,6500000.0,6.97
+Nicolas Acevedo,Bahia,25,Defensive Midfield,4500000.0,
+Rezende,Bahia,29,Defensive Midfield,800000.0,6.80
+Jean Lucas,Bahia,26,Central Midfield,7000000.0,7.01
+Carlos de Pena,Bahia,32,Central Midfield,2200000.0,
+Yago Felipe,Bahia,29,Central Midfield,2000000.0,6.91
+Cauly,Bahia,29,Attacking Midfield,6000000.0,7.13
+Everton Ribeiro,Bahia,35,Attacking Midfield,2300000.0,7.20
+Biel,Bahia,23,Left Winger,4000000.0,7.09
+Rafael Ratao,Bahia,28,Left Winger,2500000.0,6.84
+Ademir,Bahia,29,Right Winger,3000000.0,6.98
+Luciano Rodriguez,Bahia,21,Centre Forward,8000000.0,7.07
+Thaciano,Bahia,29,Centre Forward,2000000.0,7.09
+Everaldo,Bahia,33,Centre Forward,650000.0,6.88
+Gabriel Grando,Cruzeiro,24,Goalkeeper,1700000.0,
+Anderson,Cruzeiro,26,Goalkeeper,500000.0,7.02
+Cassio,Cruzeiro,37,Goalkeeper,400000.0,7.05
+Leo Aragao,Cruzeiro,22,Goalkeeper,50000.0,
+Joao Marcelo,Cruzeiro,24,Center Back,4000000.0,7.14
+Ze Ivaldo,Cruzeiro,27,Center Back,3500000.0,7.05
+Lucas Villalba,Cruzeiro,30,Center Back,2000000.0,6.83
+Weverton,Cruzeiro,21,Center Back,300000.0,
+Jonathan Jesus,Cruzeiro,20,Center Back,200000.0,
+Pedrao,Cruzeiro,20,Center Back,200000.0,
+Marlon,Cruzeiro,27,Left Back,5000000.0,6.99
+Kaiki,Cruzeiro,21,Left Back,1500000.0,6.85
+William,Cruzeiro,29,Right Back,4000000.0,7.20
+Wesley Gasolina,Cruzeiro,24,Right Back,1500000.0,6.73
+Dorival,Cruzeiro,20,Right Back,,
+Walace,Cruzeiro,29,Defensive Midfield,6000000.0,6.81
+Lucas Romero,Cruzeiro,30,Defensive Midfield,3200000.0,6.90
+Fabrizio Peralta,Cruzeiro,22,Defensive Midfield,2000000.0,
+Fernando Henrique,Cruzeiro,23,Defensive Midfield,1000000.0,
+Lucas Silva,Cruzeiro,31,Defensive Midfield,800000.0,6.88
+Matheus Henrique,Cruzeiro,26,Central Midfield,8500000.0,6.89
+Ramiro,Cruzeiro,31,Central Midfield,800000.0,6.68
+Japa,Cruzeiro,20,Central Midfield,300000.0,
+Jhosefer,Cruzeiro,20,Central Midfield,200000.0,
+Vitinho,Cruzeiro,20,Central Midfield,100000.0,
+Alvaro Barreal Meia Esquerda,Cruzeiro,24,Unknown,5000000.0,
+Matheus Pereira,Cruzeiro,28,Attacking Midfield,8500000.0,7.56
+Mateus Vital,Cruzeiro,26,Attacking Midfield,3000000.0,6.73
+Kenji,Cruzeiro,18,Left Winger,,
+Tevis,Cruzeiro,18,Left Winger,,
+Gabriel Veron,Cruzeiro,22,Right Winger,7000000.0,6.78
+Lautaro Diaz Seg. Atacante,Cruzeiro,26,Unknown,1200000.0,
+Kaio Jorge,Cruzeiro,22,Centre Forward,4000000.0,6.68
+Juan Dinenno,Cruzeiro,30,Centre Forward,4000000.0,6.96
+Rafa Silva,Cruzeiro,32,Centre Forward,400000.0,
+Everson,Atletico Mineiro,34,Goalkeeper,1800000.0,6.93
+Matheus Mendes,Atletico Mineiro,25,Goalkeeper,300000.0,7.05
+Gabriel Delfim,Atletico Mineiro,22,Goalkeeper,100000.0,
+Gabriel Atila,Atletico Mineiro,21,Goalkeeper,100000.0,
+Junior Alonso,Atletico Mineiro,31,Center Back,8000000.0,7.15
+Lyanco,Atletico Mineiro,27,Center Back,3000000.0,7.05
+Mauricio Lemos,Atletico Mineiro,28,Center Back,2500000.0,6.93
+Bruno Fuchs,Atletico Mineiro,25,Center Back,2000000.0,7.14
+Igor Rabello,Atletico Mineiro,29,Center Back,2000000.0,6.63
+Romulo,Atletico Mineiro,20,Center Back,500000.0,6.87
+Guilherme Arana,Atletico Mineiro,27,Left Back,12000000.0,7.21
+Rubens,Atletico Mineiro,23,Left Back,4000000.0,6.82
+Renzo Saravia,Atletico Mineiro,31,Right Back,2500000.0,6.82
+Vitor Gabriel,Atletico Mineiro,18,Right Back,800000.0,
+Mariano,Atletico Mineiro,38,Right Back,250000.0,6.72
+Otavio,Atletico Mineiro,30,Defensive Midfield,4500000.0,6.86
+Fausto Vera,Atletico Mineiro,24,Defensive Midfield,4500000.0,6.77
+Rodrigo Battaglia,Atletico Mineiro,33,Defensive Midfield,1200000.0,6.93
+Vitinho,Atletico Mineiro,19,Defensive Midfield,200000.0,
+Paulo Vitor,Atletico Mineiro,20,Defensive Midfield,150000.0,
+Alan Franco,Atletico Mineiro,26,Central Midfield,3500000.0,6.79
+Matias Zaracho,Atletico Mineiro,26,Attacking Midfield,9000000.0,6.89
+Gustavo Scarpa,Atletico Mineiro,30,Attacking Midfield,8000000.0,7.35
+Igor Gomes,Atletico Mineiro,25,Attacking Midfield,4000000.0,6.83
+Robert Conceicao,Atletico Mineiro,21,Attacking Midfield,300000.0,
+Paulinho,Atletico Mineiro,24,Left Winger,17000000.0,7.19
+Bernard,Atletico Mineiro,32,Left Winger,2500000.0,7.14
+Alisson,Atletico Mineiro,19,Right Winger,4500000.0,6.94
+Brahian Palacios,Atletico Mineiro,21,Right Winger,1500000.0,6.80
+Hulk,Atletico Mineiro,38,Centre Forward,1800000.0,7.53
+Eduardo Vargas,Atletico Mineiro,34,Centre Forward,1000000.0,6.89
+Deyverson,Atletico Mineiro,33,Centre Forward,800000.0,7.04
+Cadu,Atletico Mineiro,20,Centre Forward,500000.0,6.84
+Alan Kardec,Atletico Mineiro,35,Centre Forward,300000.0,6.65
+Leo Jardim,Vasco Da Gama,29,Goalkeeper,5500000.0,7.22
+Keiller,Vasco Da Gama,27,Goalkeeper,1300000.0,
+Pablo,Vasco Da Gama,21,Goalkeeper,50000.0,
+Joao Victor,Vasco Da Gama,26,Center Back,5000000.0,6.89
+Leo,Vasco Da Gama,28,Center Back,2500000.0,6.87
+Robert Rojas,Vasco Da Gama,28,Center Back,2000000.0,6.68
+Maicon,Vasco Da Gama,36,Center Back,250000.0,7.06
+Lucas Piton,Vasco Da Gama,24,Left Back,8000000.0,7.05
+Leandrinho,Vasco Da Gama,19,Left Back,2000000.0,
+Victor Luis,Vasco Da Gama,31,Left Back,500000.0,7.09
+Jose Luis Rodriguez,Vasco Da Gama,27,Right Back,2500000.0,
+Paulo Henrique,Vasco Da Gama,28,Right Back,1000000.0,6.90
+Juan Sforza,Vasco Da Gama,22,Defensive Midfield,4500000.0,6.79
+Hugo Moura,Vasco Da Gama,26,Defensive Midfield,1500000.0,6.76
+Mateus Carvalho,Vasco Da Gama,22,Defensive Midfield,800000.0,6.75
+Souza,Vasco Da Gama,35,Defensive Midfield,325000.0,6.60
+Jair,Vasco Da Gama,30,Central Midfield,3000000.0,
+Pablo Galdames,Vasco Da Gama,27,Central Midfield,1500000.0,6.86
+Paulinho Paula,Vasco Da Gama,27,Central Midfield,1000000.0,6.99
+JP,Vasco Da Gama,19,Central Midfield,600000.0,
+Philippe Coutinho,Vasco Da Gama,32,Attacking Midfield,7500000.0,7.11
+Dimitri Payet,Vasco Da Gama,37,Attacking Midfield,1500000.0,7.28
+Maxime Dominguez,Vasco Da Gama,28,Attacking Midfield,1500000.0,6.88
+Guilherme Estrella,Vasco Da Gama,19,Attacking Midfield,500000.0,
+Jean Meneses,Vasco Da Gama,31,Left Winger,3000000.0,7.04
+David,Vasco Da Gama,28,Left Winger,2000000.0,6.84
+Alex Teixeira,Vasco Da Gama,34,Left Winger,500000.0,
+Rayan,Vasco Da Gama,18,Right Winger,7000000.0,6.85
+Adson,Vasco Da Gama,24,Right Winger,4500000.0,6.99
+Emerson Rodriguez,Vasco Da Gama,24,Right Winger,2000000.0,6.78
+Rossi,Vasco Da Gama,31,Right Winger,800000.0,6.75
+GB,Vasco Da Gama,19,Centre Forward,800000.0,
+Pablo Vegetti,Vasco Da Gama,35,Centre Forward,750000.0,7.16
+Brenno,Gremio,25,Goalkeeper,1700000.0,6.76
+Caique,Gremio,27,Goalkeeper,1500000.0,7.14
+Agustin Marchesin,Gremio,36,Goalkeeper,800000.0,7.12
+Rafael Cabral,Gremio,34,Goalkeeper,400000.0,6.91
+Felipe Scheibig,Gremio,24,Goalkeeper,100000.0,
+Rodrigo Ely,Gremio,30,Center Back,3000000.0,7.05
+Gustavo Martins,Gremio,22,Center Back,3000000.0,6.72
+Jemerson,Gremio,32,Center Back,1700000.0,6.85
+Nata,Gremio,23,Center Back,1000000.0,6.70
+Walter Kannemann,Gremio,33,Center Back,800000.0,6.80
+Rodrigo Caio,Gremio,31,Center Back,800000.0,
+Pedro Geromel,Gremio,39,Center Back,200000.0,7.00
+Reinaldo,Gremio,35,Left Back,500000.0,7.13
+Mayk,Gremio,25,Left Back,500000.0,
+Joao Pedro,Gremio,27,Right Back,4000000.0,6.87
+Fabio,Gremio,34,Right Back,500000.0,6.90
+Mathias Villasanti,Gremio,27,Defensive Midfield,10000000.0,6.97
+Ronald,Gremio,21,Defensive Midfield,2000000.0,6.61
+Dodi,Gremio,28,Defensive Midfield,700000.0,6.76
+Lucas Milla,Gremio,21,Defensive Midfield,500000.0,
+Pepe,Gremio,26,Central Midfield,3000000.0,6.90
+Du Queiroz,Gremio,24,Central Midfield,3000000.0,6.74
+Edenilson,Gremio,34,Central Midfield,1200000.0,6.74
+Franco Cristaldo,Gremio,28,Attacking Midfield,10000000.0,7.28
+Miguel Monsalve,Gremio,20,Attacking Midfield,6000000.0,7.03
+Nathan,Gremio,28,Attacking Midfield,1200000.0,6.62
+Yeferson Soteldo,Gremio,27,Left Winger,7000000.0,7.07
+Alexander Aravena,Gremio,22,Left Winger,5000000.0,6.75
+Nathan Fernandes,Gremio,19,Right Winger,8000000.0,6.68
+Cristian Pavon,Gremio,28,Right Winger,4500000.0,7.02
+Matias Arezo,Gremio,21,Centre Forward,7000000.0,6.87
+Martin Braithwaite,Gremio,33,Centre Forward,3200000.0,7.18
+Diego Costa,Gremio,36,Centre Forward,1500000.0,6.98
+Andre Henrique,Gremio,22,Centre Forward,1000000.0,6.68
+Matheus Teixeira,Criciuma,25,Goalkeeper,500000.0,
+Gustavo,Criciuma,31,Goalkeeper,450000.0,7.12
+Alisson,Criciuma,29,Goalkeeper,100000.0,
+Tobias Figueiredo,Criciuma,30,Center Back,1500000.0,6.95
+Wilker Angel,Criciuma,31,Center Back,250000.0,6.94
+Erick,Criciuma,19,Center Back,200000.0,
+Rodrigo,Criciuma,37,Center Back,150000.0,
+Maia,Criciuma,33,Center Back,125000.0,
+Miguel Trauco,Criciuma,32,Left Back,1300000.0,6.75
+Marcelo Hermes,Criciuma,29,Left Back,450000.0,6.97
+Guilherme,Criciuma,22,Left Back,100000.0,
+Claudinho,Criciuma,24,Right Back,2000000.0,7.01
+Dudu,Criciuma,27,Right Back,1300000.0,6.83
+Jonathan,Criciuma,32,Right Back,300000.0,6.64
+Patrick de Paula,Criciuma,25,Defensive Midfield,1500000.0,
+Meritao,Criciuma,30,Defensive Midfield,1300000.0,
+Ronald,Criciuma,27,Defensive Midfield,800000.0,6.70
+Barreto,Criciuma,28,Defensive Midfield,500000.0,6.84
+Newton,Criciuma,24,Defensive Midfield,250000.0,6.84
+Eliedson,Criciuma,21,Defensive Midfield,200000.0,6.60
+Matheusinho,Criciuma,26,Attacking Midfield,1800000.0,6.91
+Marquinhos Gabriel,Criciuma,34,Attacking Midfield,400000.0,6.94
+Fellipe Mateus,Criciuma,33,Attacking Midfield,350000.0,7.18
+Pedro Rocha,Criciuma,30,Left Winger,1500000.0,6.65
+Serginho,Criciuma,29,Left Winger,1000000.0,
+Arthur Caike,Criciuma,32,Left Winger,800000.0,6.81
+Yannick Bolasie,Criciuma,35,Left Winger,250000.0,6.89
+Eduardo Melo,Criciuma,23,Left Winger,100000.0,
+Jhonata Robert,Criciuma,24,Right Winger,1000000.0,
+Allano,Criciuma,29,Right Winger,300000.0,7.00
+Felipe Vizeu,Criciuma,27,Centre Forward,500000.0,6.88
+Werik Popo,Criciuma,22,Centre Forward,350000.0,6.41
+Cleiton,Red Bull Bragantino,27,Goalkeeper,4000000.0,7.16
+Lucao,Red Bull Bragantino,23,Goalkeeper,1500000.0,6.93
+Pedro Henrique,Red Bull Bragantino,29,Center Back,3500000.0,6.89
+Lucas Cunha,Red Bull Bragantino,27,Center Back,2500000.0,6.72
+Douglas Mendes,Red Bull Bragantino,20,Center Back,2000000.0,6.93
+Eduardo Santos,Red Bull Bragantino,26,Center Back,900000.0,6.92
+Sergio Palacios,Red Bull Bragantino,19,Center Back,900000.0,
+Luan Candido,Red Bull Bragantino,23,Left Back,7000000.0,6.96
+Juninho Capixaba,Red Bull Bragantino,27,Left Back,3000000.0,7.19
+Guilherme,Red Bull Bragantino,22,Left Back,500000.0,
+Jose Andres Hurtado,Red Bull Bragantino,22,Right Back,1800000.0,
+Nathan Mendes,Red Bull Bragantino,22,Right Back,1000000.0,6.81
+Jadsom,Red Bull Bragantino,23,Defensive Midfield,4000000.0,6.70
+Matheus Fernandes,Red Bull Bragantino,26,Defensive Midfield,2000000.0,7.00
+Raul,Red Bull Bragantino,28,Defensive Midfield,1500000.0,6.78
+Eric Ramires,Red Bull Bragantino,24,Central Midfield,4000000.0,6.77
+Lucas Evangelista,Red Bull Bragantino,29,Central Midfield,4000000.0,7.03
+Gustavo Neves,Red Bull Bragantino,20,Central Midfield,2500000.0,6.76
+Joao Neto,Red Bull Bragantino,21,Central Midfield,,
+Jhon Jhon,Red Bull Bragantino,22,Attacking Midfield,4000000.0,7.00
+Lincoln,Red Bull Bragantino,25,Attacking Midfield,3500000.0,7.04
+Vitinho,Red Bull Bragantino,26,Attacking Midfield,400000.0,7.00
+Vitinho,Red Bull Bragantino,26,Attacking Midfield,400000.0,
+Vitinho,Red Bull Bragantino,25,Left Winger,7000000.0,7.00
+Vitinho,Red Bull Bragantino,25,Left Winger,7000000.0,
+Ivan Cavaleiro,Red Bull Bragantino,30,Left Winger,2000000.0,6.55
+Henry Mosquera,Red Bull Bragantino,22,Left Winger,2000000.0,6.79
+Kawe,Red Bull Bragantino,22,Right Winger,300000.0,
+Thiago Borbas,Red Bull Bragantino,22,Centre Forward,7000000.0,6.85
+Eduardo Sasha,Red Bull Bragantino,32,Centre Forward,1800000.0,6.99
+Arthur Sousa,Red Bull Bragantino,21,Centre Forward,800000.0,
+Gabriel,Juventude,32,Goalkeeper,1000000.0,
+Mateus Claus,Juventude,30,Goalkeeper,500000.0,
+Lucas Wingert,Juventude,25,Goalkeeper,50000.0,
+Danilo Boza,Juventude,26,Center Back,1200000.0,6.98
+Ze Marcos,Juventude,26,Center Back,600000.0,6.89
+Lucas Freitas,Juventude,23,Center Back,450000.0,6.77
+Yan Souto,Juventude,23,Center Back,450000.0,6.99
+Rodrigo Sam,Juventude,29,Center Back,50000.0,6.90
+Alan Ruschel,Juventude,35,Left Back,200000.0,6.83
+Joao Lucas,Juventude,26,Right Back,1700000.0,6.99
+Ewerthon,Juventude,23,Right Back,750000.0,
+Gabriel Inocencio,Juventude,30,Right Back,250000.0,6.67
+Joao Vitor,Juventude,22,Right Back,100000.0,
+Luis Oyama,Juventude,27,Defensive Midfield,700000.0,6.78
+Ronaldo,Juventude,27,Defensive Midfield,700000.0,
+Caique Goncalves,Juventude,29,Defensive Midfield,500000.0,6.93
+Kelvi Gomes,Juventude,21,Defensive Midfield,250000.0,
+Daniel Peixoto,Juventude,27,Defensive Midfield,100000.0,
+Jadson,Juventude,31,Central Midfield,1000000.0,7.03
+Mandaca,Juventude,23,Central Midfield,800000.0,
+Thiago Conti,Juventude,27,Central Midfield,250000.0,
+Dudu Vieira,Juventude,30,Central Midfield,200000.0,
+Jean Carlos,Juventude,32,Attacking Midfield,750000.0,7.05
+Nene,Juventude,43,Attacking Midfield,200000.0,6.93
+David,Juventude,24,Left Winger,1000000.0,6.75
+Diego Goncalves,Juventude,30,Left Winger,500000.0,6.74
+Lucas Barbosa,Juventude,23,Right Winger,2000000.0,7.02
+Marcelinho,Juventude,21,Right Winger,400000.0,6.81
+Erick Farias,Juventude,27,Centre Forward,1300000.0,6.86
+Gabriel Taliari,Juventude,27,Centre Forward,600000.0,6.75
+Ronie Carrillo,Juventude,28,Centre Forward,500000.0,6.70
+Gilberto,Juventude,35,Centre Forward,400000.0,6.78
+Edson Carioca,Juventude,26,Centre Forward,100000.0,6.67
+Mateus Pasinato,Cuiaba,32,Goalkeeper,300000.0,
+Walter,Cuiaba,36,Goalkeeper,250000.0,7.14
+Rhyan,Cuiaba,18,Goalkeeper,50000.0,
+Alan Empereur,Cuiaba,30,Center Back,750000.0,6.96
+Gabriel,Cuiaba,20,Center Back,700000.0,
+Bruno Alves,Cuiaba,33,Center Back,600000.0,6.88
+Marllon,Cuiaba,32,Center Back,500000.0,7.01
+Ramon,Cuiaba,23,Left Back,2500000.0,6.90
+Juan Tavares,Cuiaba,22,Left Back,150000.0,
+Tarcisio,Cuiaba,21,Left Back,,
+Matheus Alexandre,Cuiaba,25,Right Back,1500000.0,6.76
+Railan,Cuiaba,24,Right Back,150000.0,6.67
+Lucas Mineiro,Cuiaba,28,Defensive Midfield,1400000.0,6.82
+Guilherme Madruga,Cuiaba,23,Defensive Midfield,800000.0,6.75
+Filipe Augusto,Cuiaba,31,Defensive Midfield,700000.0,6.64
+Denilson,Cuiaba,23,Central Midfield,2000000.0,6.91
+Fernando Sobral,Cuiaba,29,Central Midfield,2000000.0,7.07
+Lucas Fernandes,Cuiaba,27,Attacking Midfield,2000000.0,6.83
+Max,Cuiaba,23,Attacking Midfield,500000.0,6.88
+Clayson,Cuiaba,29,Left Winger,1000000.0,6.86
+Eliel,Cuiaba,21,Left Winger,450000.0,6.62
+Gabryel Freitas,Cuiaba,21,Left Winger,300000.0,
+Gustavo Sauer,Cuiaba,31,Right Winger,1400000.0,6.80
+Andre Luis,Cuiaba,27,Right Winger,800000.0,6.70
+Jonathan Cafu,Cuiaba,33,Right Winger,300000.0,6.71
+Isidro Pitta,Cuiaba,25,Centre Forward,5000000.0,6.86
+Derik Lacerda,Cuiaba,25,Centre Forward,500000.0,6.84
+Gustavo Nescau,Cuiaba,24,Centre Forward,100000.0,6.75
+Ronaldo,Atletico Goianiense,28,Goalkeeper,1200000.0,7.04
+Pedro Rangel,Atletico Goianiense,24,Goalkeeper,600000.0,
+Emerson Junior,Atletico Goianiense,24,Goalkeeper,100000.0,
+Leo,Atletico Goianiense,22,Goalkeeper,,
+Pedro Henrique,Atletico Goianiense,31,Center Back,1000000.0,7.00
+Alix,Atletico Goianiense,24,Center Back,1000000.0,
+Luiz Felipe,Atletico Goianiense,31,Center Back,800000.0,6.79
+Philipe Sampaio,Atletico Goianiense,29,Center Back,500000.0,
+Adriano Martins,Atletico Goianiense,27,Center Back,500000.0,6.97
+Luiz Gustavo,Atletico Goianiense,21,Center Back,100000.0,
+Marcao,Atletico Goianiense,23,Center Back,100000.0,7.15
+Yeferson Rodallega,Atletico Goianiense,23,Left Back,650000.0,6.63
+Guilherme Romao,Atletico Goianiense,27,Left Back,400000.0,7.11
+Bruno Tubarao,Atletico Goianiense,29,Right Back,500000.0,6.92
+Rafael Haller,Atletico Goianiense,24,Right Back,500000.0,
+Maguinho,Atletico Goianiense,32,Right Back,300000.0,6.72
+Roni,Atletico Goianiense,25,Defensive Midfield,2000000.0,6.85
+Campanharo,Atletico Goianiense,32,Defensive Midfield,800000.0,
+Rhaldney,Atletico Goianiense,25,Defensive Midfield,600000.0,6.86
+Gonzalo Freitas,Atletico Goianiense,33,Defensive Midfield,400000.0,7.03
+Baralhas,Atletico Goianiense,26,Central Midfield,1000000.0,
+Shaylon,Atletico Goianiense,27,Attacking Midfield,2000000.0,7.25
+Angelo Araos,Atletico Goianiense,27,Attacking Midfield,700000.0,
+Jorginho,Atletico Goianiense,33,Attacking Midfield,450000.0,7.05
+Luiz Fernando,Atletico Goianiense,27,Left Winger,1500000.0,7.22
+Janderson,Atletico Goianiense,25,Left Winger,900000.0,6.89
+Matias Lacava,Atletico Goianiense,21,Left Winger,700000.0,6.76
+Alejo Cruz,Atletico Goianiense,24,Left Winger,700000.0,7.03
+Joel Campbell,Atletico Goianiense,32,Right Winger,650000.0,7.29
+Emiliano Rodriguez,Atletico Goianiense,21,Centre Forward,1500000.0,
+Derek,Atletico Goianiense,26,Centre Forward,800000.0,
+Jan Hurtado,Atletico Goianiense,24,Centre Forward,400000.0,6.81
