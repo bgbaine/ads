@@ -23,7 +23,7 @@ def confirmar():
 
 
 def agrupar_por_tipo_tumor():
-    titulo("Top 10 Tipos de Tumor Mais Comuns")
+    titulo("5 Tipos de Tumor Mais Comuns")
     grupos = {}
     for paciente in pacientes:
         tipo_tumor = paciente["TumorType"]
@@ -35,24 +35,26 @@ def agrupar_por_tipo_tumor():
     print("Nº Tipo de Tumor..................: Nº Pacientes")
     for num, (tipo, qtd) in enumerate(grupos_ordenados[:10], start=1):
         print(f"{num:2d} {tipo:25s} {qtd:>10d}")
+        if num == 5:
+            break
 
     confirmar()
 
 
 def ordenar_por_idade():
-    titulo("Top 10 Pacientes Mais Jovens e Mais Velhos")
+    titulo("10 Pacientes Mais Jovens e Mais Idosos")
     pacientes_ordenados = sorted(pacientes, key=lambda p: int(p["Age"]))
-    print("Nº Nome do Paciente...........: Idade.:")
+    print("Nº ID do Paciente...........: Idade.:")
     print("---------------------------------------------------------")
 
     for num, paciente in enumerate(pacientes_ordenados[:10], start=1):
         print(f"{num:2d} {paciente['PatientID']:25s} {paciente['Age']} anos")
-        print("\nTop 10 Pacientes Mais Velhos")
-        print("Nº Nome do Paciente...........: Idade.:")
-        print("---------------------------------------------------------")
+    print("\n10 Pacientes Mais Idosos")
+    print("Nº ID do Paciente...........: Idade.:")
+    print("---------------------------------------------------------")
 
-        for num, paciente in enumerate(pacientes_ordenados[-10:], start=1):
-            print(f"{num:2d} {paciente['PatientID']:25s} {paciente['Age']} anos")
+    for num, paciente in enumerate(pacientes_ordenados[-10:], start=1):
+        print(f"{num:2d} {paciente['PatientID']:25s} {paciente['Age']} anos")
 
     confirmar()
 
@@ -81,7 +83,7 @@ def comparar_metastase():
 
 def pesquisa_por_provincia_estagio():
     titulo("Pesquisa por Província e Estágio")
-    provincia = input("Informe a província: ").capitalize()
+    provincia = input("Informe a província (Hunan, Sichuan, Guangdong, Beijing): ").capitalize()
     estagio = input("Informe o estágio do câncer (I a IV): ").upper()
 
     resultados = [
@@ -92,9 +94,11 @@ def pesquisa_por_provincia_estagio():
 
     if resultados:
         print(f"\nPacientes em {provincia} no estágio {estagio}:")
+        print("Nº ID do Paciente....: Idade : Gênero : Etnia")
+        print("-------------------------------------------------------------")
         for p in resultados:
             print(
-                f"{p['PatientID']:15s} {p['Age']} anos {p['Gender']} {p['Ethnicity']}"
+                f"{p['PatientID']:20s} {p['Age']:>5} anos {p['Gender']:>7} {p['Ethnicity']}"
             )
         confirmar()
 
@@ -113,9 +117,9 @@ def analise_por_estagio():
     pacientes_estagio2 = {
         p["PatientID"] for p in pacientes if p["CancerStage"] == estagio2
     }
-    intersecao = pacientes_estagio1.union(pacientes_estagio2)
+    uniao = pacientes_estagio1.union(pacientes_estagio2)
     diferenca = pacientes_estagio1.difference(pacientes_estagio2)
-    print(f"\nPacientes nos estágios {estagio1} e {estagio2}: {len(intersecao)}")
+    print(f"\nPacientes nos estágios {estagio1} ou {estagio2}: {len(uniao)}")
     print(f"Pacientes apenas no estágio {estagio1}: {len(diferenca)}")
 
     confirmar()
