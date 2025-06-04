@@ -5,11 +5,10 @@
  *   description: API para gerenciamento de locações de filmes
  */
 
-import { PrismaClient } from "@prisma/client";
+import prisma from "../prisma/prismaClient";
 import { Router } from "express";
 import { z } from "zod";
 
-const prisma = new PrismaClient();
 const router = Router();
 
 const locacoesSchema = z.object({
@@ -41,6 +40,108 @@ const locacoesSchema = z.object({
 router.get("/", async (req, res) => {
   try {
     const locacoes = await prisma.locacao.findMany();
+    res.status(200).json(locacoes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /locacoes/abertas:
+ *   get:
+ *     summary: Lista apenas as locações abertas
+ *     tags: [Locações]
+ *     responses:
+ *       200:
+ *         description: Lista de locações retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Locacao'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/abertas", async (req, res) => {
+  try {
+    const locacoes = await prisma.locacao.findMany({
+      where: {
+        dataDevolucao: null,
+      },
+    });
+    res.status(200).json(locacoes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /locacoes/fechadas:
+ *   get:
+ *     summary: Lista apenas locações fechadas
+ *     tags: [Locações]
+ *     responses:
+ *       200:
+ *         description: Lista de locações retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Locacao'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/fechadas", async (req, res) => {
+  try {
+    const locacoes = await prisma.locacao.findMany({
+      where: {
+        dataDevolucao: {
+          not: null,
+        },
+      },
+    });
+    res.status(200).json(locacoes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /locacoes/{id}:
+ *   get:
+ *     summary: Lista uma locações específica por ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID da locação a ser finalizada
+ *         schema:
+ *           type: integer
+ *     tags: [Locações]
+ *     responses:
+ *       200:
+ *         description: Locação retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Locacao'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/:id", async (req, res) => {
+  try {
+    const locacoes = await prisma.locacao.findMany({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
     res.status(200).json(locacoes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -118,12 +219,6 @@ router.post("/", async (req, res) => {
  *         description: ID da locação a ser finalizada
  *         schema:
  *           type: integer
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/LocacaoInput'
  *     responses:
  *       200:
  *         description: Locação atualizada com sucesso
@@ -132,23 +227,27 @@ router.post("/", async (req, res) => {
  *             schema:
  *               $ref: '#/components/schemas/Locacao'
  *       400:
- *         description: Dados inválidos enviados
+ *        description: Dados inválidos enviados
+ *       404:
+ *         description: Locação não encontrada
  *       500:
  *         description: Erro interno do servidor
  */
-router.patch("/:id", async (req, res) => {
+router.patch("/:id", async (req: any, res: any) => {
   try {
-    const result = locacoesSchema.safeParse(req.body);
-
-    if (!result.success) {
-      res.status(400).json({ erro: "Informe todos os campos corretamente" });
-      return;
-    }
-
-    const { filmeId } = result.data;
     const { id } = req.params;
 
-    const [locacao, _] = await prisma.$transaction([
+    const locacao = await prisma.locacao.findUnique({
+      where: { id: Number(id) },
+    });
+
+    if (!locacao) {
+      return res.status(404).json({ erro: "Locação não encontrada" });
+    }
+
+    const filmeId = locacao.filmeId;
+
+    const [updatedLocacao, _] = await prisma.$transaction([
       prisma.locacao.update({
         where: { id: Number(id) },
         data: { dataDevolucao: new Date() },
@@ -159,7 +258,7 @@ router.patch("/:id", async (req, res) => {
       }),
     ]);
 
-    res.status(200).json(locacao);
+    res.status(200).json(updatedLocacao);
   } catch (error) {
     res.status(500).json({ erro: error });
   }
@@ -211,7 +310,7 @@ export default router;
  * @swagger
  * components:
  *   schemas:
- *     Locacao:
+ *     LocacaoModel:
  *       type: object
  *       properties:
  *         id:
@@ -230,12 +329,12 @@ export default router;
  *           type: string
  *           format: date
  *           description: Data da locação
- *           example: "2025-06-01"
+ *           example: "2025-06-01T00:00:00Z"
  *         dataDevolucao:
  *           type: string
  *           format: date
  *           description: Data da devolução
- *           example: "2025-06-10"
+ *           example: "2025-06-10T00:00:00Z"
  *         valor:
  *           type: number
  *           description: Valor da locação
@@ -252,11 +351,11 @@ export default router;
  *         dataLocacao:
  *           type: string
  *           format: date
- *           example: "2025-06-01"
+ *           example: "2025-06-01T00:00:00Z"
  *         dataDevolucao:
  *           type: string
  *           format: date
- *           example: "2025-06-10"
+ *           example: "2025-06-10T00:00:00Z"
  *         valor:
  *           type: number
  *           example: 14.90

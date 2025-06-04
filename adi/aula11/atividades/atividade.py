@@ -59,24 +59,33 @@ def ordenar_por_idade():
     confirmar()
 
 
-def comparar_metastase():
-    titulo("Média de Idade por Metástase")
-    com_metastase = [p for p in pacientes if p["Metastasis"].lower() == "yes"]
-    sem_metastase = [p for p in pacientes if p["Metastasis"].lower() == "no"]
+def comparar_media_idade_metastase():
+    titulo("Média de Idade por Metástase (por Tipo de Tumor)")
 
-    media_com = (
-        sum(int(p["Age"]) for p in com_metastase) / len(com_metastase)
-        if com_metastase
-        else 0
-    )
-    media_sem = (
-        sum(int(p["Age"]) for p in sem_metastase) / len(sem_metastase)
-        if sem_metastase
-        else 0
-    )
+    # Obter todos os tipos únicos de tumor
+    tipos_tumor = set(p["TumorType"].strip().lower() for p in pacientes)
 
-    print(f"Média de Idade com Metástase: {media_com:.1f} anos")
-    print(f"Média de Idade sem Metástase: {media_sem:.1f} anos")
+    for tipo in tipos_tumor:
+        pacientes_filtrados = [
+            p for p in pacientes if p["TumorType"].strip().lower() == tipo
+        ]
+        com_metastase = [p for p in pacientes_filtrados if p["Metastasis"].lower() == "yes"]
+        sem_metastase = [p for p in pacientes_filtrados if p["Metastasis"].lower() == "no"]
+
+        media_com = (
+            sum(int(p["Age"]) for p in com_metastase) / len(com_metastase)
+            if com_metastase
+            else 0
+        )
+        media_sem = (
+            sum(int(p["Age"]) for p in sem_metastase) / len(sem_metastase)
+            if sem_metastase
+            else 0
+        )
+
+        print(f"\nTipo de Tumor: {tipo.title()}")
+        print(f"  Média de idade com Metástase: {media_com:.1f} anos")
+        print(f"  Média de idade sem Metástase: {media_sem:.1f} anos")
 
     confirmar()
 
@@ -130,7 +139,7 @@ while True:
     titulo("Análise de Pacientes com Câncer na China")
     print("1. Agrupar por Tipo de Tumor")
     print("2. Ordenar por Idade")
-    print("3. Comparar Metástase")
+    print("3. Comparar Idade Média com Metástase")
     print("4. Pesquisa por Província e Estágio")
     print("5. Análise por Estágio de Câncer")
     print("6. Sair")
@@ -147,7 +156,7 @@ while True:
     elif opcao == 2:
         ordenar_por_idade()
     elif opcao == 3:
-        comparar_metastase()
+        comparar_media_idade_metastase()
     elif opcao == 4:
         pesquisa_por_provincia_estagio()
     elif opcao == 5:

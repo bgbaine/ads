@@ -11,7 +11,13 @@ const app = express();
 const port = 3001;
 
 app.use(express.json());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs, {
+    requestSnippetsEnabled: false,
+  })
+);
 app.use("/clientes", routesClientes);
 app.use("/filmes", routesFilmes);
 app.use("/locacoes", routesLocacoes);

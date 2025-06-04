@@ -5,11 +5,10 @@
  *   description: API para gerenciamento de clientes
  */
 
-import { PrismaClient } from "@prisma/client";
+import prisma from "../prisma/prismaClient";
 import { Router } from "express";
 import { z } from "zod";
 
-const prisma = new PrismaClient();
 const router = Router();
 
 const clientesSchema = z.object({
@@ -40,6 +39,44 @@ const clientesSchema = z.object({
 router.get("/", async (req, res) => {
   try {
     const clientes = await prisma.cliente.findMany();
+    res.status(200).json(clientes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /clientes/{id}:
+ *   get:
+ *     summary: Lista apenas um cliente específico
+ *     tags: [Clientes]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID do cliente a ser buscado
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Cliente retornado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Cliente'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/:id", async (req, res) => {
+  try {
+    const clientes = await prisma.cliente.findMany({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
     res.status(200).json(clientes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -208,7 +245,7 @@ export default router;
  * @swagger
  * components:
  *   schemas:
- *     Cliente:
+ *     ClienteModel:
  *       type: object
  *       properties:
  *         id:
@@ -226,12 +263,12 @@ export default router;
  *         telefone:
  *           type: string
  *           description: Telefone do cliente
- *           example: "(11) 91234-5678"
+ *           example: "5511912345678"
  *         dataNascimento:
  *           type: string
  *           format: date
  *           description: Data de nascimento
- *           example: "1990-01-01"
+ *           example: "1990-01-01T00:00:00Z"
  *     ClienteInput:
  *       type: object
  *       properties:
@@ -243,11 +280,11 @@ export default router;
  *           example: "joao@email.com"
  *         telefone:
  *           type: string
- *           example: "(11) 91234-5678"
+ *           example: "5511912345678"
  *         dataNascimento:
  *           type: string
  *           format: date
- *           example: "1990-01-01"
+ *           example: "1990-01-01T00:00:00Z"
  *       required:
  *         - nome
  *         - email

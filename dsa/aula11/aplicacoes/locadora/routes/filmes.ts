@@ -5,11 +5,10 @@
  *   description: API para gerenciamento de filmes
  */
 
-import { PrismaClient } from "@prisma/client";
+import prisma from "../prisma/prismaClient";
 import { Router } from "express";
 import { z } from "zod";
 
-const prisma = new PrismaClient();
 const router = Router();
 
 const filmesSchema = z.object({
@@ -49,6 +48,72 @@ const filmesSchema = z.object({
 router.get("/", async (req, res) => {
   try {
     const filmes = await prisma.filme.findMany();
+    res.status(200).json(filmes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /filmes/disponiveis:
+ *   get:
+ *     summary: Lista apenas filmes disponíveis
+ *     tags: [Filmes]
+ *     responses:
+ *       200:
+ *         description: Lista de filmes retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Filme'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/disponiveis", async (req, res) => {
+  try {
+    const filmes = await prisma.filme.findMany(
+      {
+        where: {
+          disponivel: true,
+        },
+      }	
+    );
+    res.status(200).json(filmes);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
+ * /filmes/indisponiveis:
+ *   get:
+ *     summary: Lista apenas filmes indisponíveis (locados)
+ *     tags: [Filmes]
+ *     responses:
+ *       200:
+ *         description: Lista de filmes retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Filme'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/indisponiveis", async (req, res) => {
+  try {
+    const filmes = await prisma.filme.findMany(
+      {
+        where: {
+          disponivel: false,
+        },
+      }	
+    );
     res.status(200).json(filmes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -270,7 +335,7 @@ export default router;
  * @swagger
  * components:
  *   schemas:
- *     Filme:
+ *     FilmeModel:
  *       type: object
  *       properties:
  *         id:
