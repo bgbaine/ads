@@ -33,7 +33,7 @@ const locacoesSchema = z.object({
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Locacao'
+ *                 $ref: '#/components/schemas/LocacaoModel'
  *       500:
  *         description: Erro interno do servidor
  */
@@ -60,7 +60,7 @@ router.get("/", async (req, res) => {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Locacao'
+ *                 $ref: '#/components/schemas/LocacaoModel'
  *       500:
  *         description: Erro interno do servidor
  */
@@ -91,7 +91,7 @@ router.get("/abertas", async (req, res) => {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Locacao'
+ *                 $ref: '#/components/schemas/LocacaoModel'
  *       500:
  *         description: Erro interno do servidor
  */
@@ -131,7 +131,7 @@ router.get("/fechadas", async (req, res) => {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Locacao'
+ *                 $ref: '#/components/schemas/LocacaoModel'
  *       500:
  *         description: Erro interno do servidor
  */
@@ -166,13 +166,15 @@ router.get("/:id", async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Locacao'
+ *               $ref: '#/components/schemas/LocacaoModel'
  *       400:
- *         description: Dados inválidos enviados
+ *         description: Filme não disponível
+ *       404:
+ *         description: Filme não encontrado
  *       500:
  *         description: Erro interno do servidor
  */
-router.post("/", async (req, res) => {
+router.post("/", async (req: any, res: any) => {
   try {
     const result = locacoesSchema.safeParse(req.body);
 
@@ -183,6 +185,21 @@ router.post("/", async (req, res) => {
 
     const { clienteId, filmeId, dataLocacao, dataDevolucao, valor } =
       result.data;
+
+    const filme = await prisma.filme.findUnique({
+      where: { id: filmeId },
+      select: { disponivel: true },
+    });
+
+    if (!filme) {
+      return res.status(404).json({ erro: "Filme não encontrado" });
+    }
+
+    if (filme.disponivel === false) {
+      return res
+        .status(400)
+        .json({ erro: "Filme não está disponível para locação" });
+    }
 
     const [_, locacao] = await prisma.$transaction([
       prisma.filme.update({
@@ -225,7 +242,7 @@ router.post("/", async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Locacao'
+ *               $ref: '#/components/schemas/LocacaoModel'
  *       400:
  *        description: Dados inválidos enviados
  *       404:

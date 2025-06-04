@@ -41,7 +41,7 @@ const filmesSchema = z.object({
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Filme'
+ *                 $ref: '#/components/schemas/FilmeModel'
  *       500:
  *         description: Erro interno do servidor
  */
@@ -68,19 +68,17 @@ router.get("/", async (req, res) => {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Filme'
+ *                 $ref: '#/components/schemas/FilmeModel'
  *       500:
  *         description: Erro interno do servidor
  */
 router.get("/disponiveis", async (req, res) => {
   try {
-    const filmes = await prisma.filme.findMany(
-      {
-        where: {
-          disponivel: true,
-        },
-      }	
-    );
+    const filmes = await prisma.filme.findMany({
+      where: {
+        disponivel: true,
+      },
+    });
     res.status(200).json(filmes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -101,19 +99,17 @@ router.get("/disponiveis", async (req, res) => {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Filme'
+ *                 $ref: '#/components/schemas/FilmeModel'
  *       500:
  *         description: Erro interno do servidor
  */
 router.get("/indisponiveis", async (req, res) => {
   try {
-    const filmes = await prisma.filme.findMany(
-      {
-        where: {
-          disponivel: false,
-        },
-      }	
-    );
+    const filmes = await prisma.filme.findMany({
+      where: {
+        disponivel: false,
+      },
+    });
     res.status(200).json(filmes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -138,7 +134,7 @@ router.get("/indisponiveis", async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Filme'
+ *               $ref: '#/components/schemas/FilmeModel'
  *       400:
  *         description: Dados inválidos enviados
  *       500:
@@ -196,7 +192,7 @@ router.post("/", async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Filme'
+ *               $ref: '#/components/schemas/FilmeModel'
  *       400:
  *         description: Dados inválidos enviados
  *       500:
@@ -252,7 +248,7 @@ router.put("/:id", async (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Filme'
+ *               $ref: '#/components/schemas/FilmeModel'
  *       404:
  *         description: Filme não encontrado
  *       500:
