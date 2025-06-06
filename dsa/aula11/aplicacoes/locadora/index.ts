@@ -2,7 +2,6 @@
 import { swaggerUi, specs } from "./swagger";
 
 import express from "express";
-import prisma from "./prisma/prismaClient";
 import routesClientes from "./routes/clientes";
 import routesFilmes from "./routes/filmes";
 import routesLocacoes from "./routes/locacoes";

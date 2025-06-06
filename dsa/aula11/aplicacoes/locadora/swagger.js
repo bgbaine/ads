@@ -5,7 +5,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Locadora Avenida API",
+      title: "API Locadora Avenida",
       version: "1.0.0",
       description: "Documentacao da API Locadora Avenida",
     },

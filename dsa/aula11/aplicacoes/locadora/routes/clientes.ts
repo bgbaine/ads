@@ -8,7 +8,7 @@
 import prisma from "../prisma/prismaClient";
 import { Router } from "express";
 import { z } from "zod";
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
 
 const router = Router();
 
@@ -39,7 +39,6 @@ const clientesSchema = z.object({
  */
 router.get("/", async (req, res) => {
   try {
-    console.log(process.env.DATABASE_URL);
     const clientes = await prisma.cliente.findMany();
     res.status(200).json(clientes);
   } catch (error) {
@@ -72,14 +71,18 @@ router.get("/", async (req, res) => {
  *       500:
  *         description: Erro interno do servidor
  */
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req: any, res: any) => {
   try {
-    const clientes = await prisma.cliente.findMany({
+    const cliente = await prisma.cliente.findUnique({
       where: {
         id: Number(req.params.id),
       },
     });
-    res.status(200).json(clientes);
+
+    if (!cliente)
+      return res.status(404).json({ erro: "Cliente não encontrado" });
+
+    res.status(200).json(cliente);
   } catch (error) {
     res.status(500).json({ erro: error });
   }
@@ -200,7 +203,7 @@ router.put("/:id", async (req, res) => {
  * @swagger
  * /clientes/{id}:
  *   delete:
- *     summary: Remove um cliente e suas locações associadas
+ *     summary: Remove um cliente e suas locações associadas, alem de tornar os filmes disponíveis novamente
  *     tags: [Clientes]
  *     parameters:
  *       - in: path
@@ -224,16 +227,27 @@ router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    await prisma.$transaction([
-      prisma.locacao.deleteMany({
+    await prisma.$transaction(async (tx) => {
+      const locacoes = await tx.locacao.findMany({
         where: { clienteId: Number(id) },
-      }),
-      prisma.cliente.delete({
-        where: {
-          id: Number(id),
-        },
-      }),
-    ]);
+        select: { filmeId: true },
+      });
+
+      const filmeIds = locacoes.map((l) => l.filmeId);
+
+      await tx.filme.updateMany({
+        where: { id: { in: filmeIds } },
+        data: { disponivel: true },
+      });
+
+      await tx.locacao.deleteMany({
+        where: { clienteId: Number(id) },
+      });
+
+      await tx.cliente.delete({
+        where: { id: Number(id) },
+      });
+    });
 
     res.status(200).json(id);
   } catch (error) {
@@ -266,17 +280,23 @@ function gerarTabelaLocacoesHTML(cliente: any) {
   let total = 0;
 
   for (const locacao of cliente.locacoes) {
-    const dataLocacao = new Date(locacao.dataLocacao).toLocaleString('pt-BR', {
-      timeZone: 'America/Sao_Paulo',
-      day: '2-digit', month: '2-digit', year: 'numeric',
-      hour: '2-digit', minute: '2-digit'
+    const dataLocacao = new Date(locacao.dataLocacao).toLocaleString("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
     });
 
     const dataDevolucao = locacao.dataDevolucao
-      ? new Date(locacao.dataDevolucao).toLocaleString('pt-BR', {
-          timeZone: 'America/Sao_Paulo',
-          day: '2-digit', month: '2-digit', year: 'numeric',
-          hour: '2-digit', minute: '2-digit'
+      ? new Date(locacao.dataDevolucao).toLocaleString("pt-BR", {
+          timeZone: "America/Sao_Paulo",
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
         })
       : "Não devolvido";
 
@@ -291,7 +311,9 @@ function gerarTabelaLocacoesHTML(cliente: any) {
         <td>${locacao.filme.anoLancamento || "-"}</td>
         <td>${locacao.filme.duracao || "-"}</td>
         <td>${dataDevolucao}</td>
-        <td style="text-align: right;">${valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</td>
+        <td style="text-align: right;">${valor.toLocaleString("pt-BR", {
+          minimumFractionDigits: 2,
+        })}</td>
       </tr>
     `;
   }
@@ -299,7 +321,9 @@ function gerarTabelaLocacoesHTML(cliente: any) {
   html += `
       <tr style="font-weight: bold; background-color: rgb(235, 232, 232);">
         <td colspan="6" style="text-align: right;">Total:</td>
-        <td style="text-align: right;">R$ ${total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</td>
+        <td style="text-align: right;">R$ ${total.toLocaleString("pt-BR", {
+          minimumFractionDigits: 2,
+        })}</td>
       </tr>
     </tbody>
     </table>
@@ -323,11 +347,8 @@ const transporter = nodemailer.createTransport({
 async function enviaEmailLocacoes(cliente: any) {
   const mensagem = gerarTabelaLocacoesHTML(cliente);
 
-  console.log('SMTP_USER:', process.env.SMTP_USER);
-  console.log('SMTP_PASS:', process.env.SMTP_PASS);
-
   const info = await transporter.sendMail({
-    from: 'Locadora <locadora-avenida@no-reply.com>',
+    from: "Locadora <locadora-avenida@no-reply.com>",
     to: cliente.email,
     subject: "Seu Relatório de Locações",
     text: "Segue seu relatório de locações.", // Corpo simples
@@ -358,6 +379,8 @@ async function enviaEmailLocacoes(cliente: any) {
  *             schema:
  *               type: integer
  *               example: 1
+ *       404:
+ *         description: Cliente não encontrado ou não possui locações
  *       500:
  *         description: Erro interno do servidor
  */
@@ -370,14 +393,18 @@ router.post("/enviar-relatorio/:id", async (req: any, res: any) => {
       include: {
         locacoes: {
           include: {
-            filme: true
-          }
-        }
-      }
+            filme: true,
+          },
+        },
+      },
     });
 
     if (!cliente) {
       return res.status(404).json({ erro: "Cliente não encontrado" });
+    }
+
+    if (!cliente.locacoes || cliente.locacoes.length === 0) {
+      return res.status(404).json({ erro: "Cliente não possui locações" });
     }
 
     await enviaEmailLocacoes(cliente);

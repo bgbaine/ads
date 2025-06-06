@@ -95,7 +95,7 @@ router.get("/abertas", async (req, res) => {
  *       500:
  *         description: Erro interno do servidor
  */
-router.get("/fechadas", async (req, res) => {
+router.get("/fechadas", async (req: any, res: any) => {
   try {
     const locacoes = await prisma.locacao.findMany({
       where: {
@@ -104,6 +104,7 @@ router.get("/fechadas", async (req, res) => {
         },
       },
     });
+
     res.status(200).json(locacoes);
   } catch (error) {
     res.status(500).json({ erro: error });
@@ -135,14 +136,18 @@ router.get("/fechadas", async (req, res) => {
  *       500:
  *         description: Erro interno do servidor
  */
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req: any, res: any) => {
   try {
-    const locacoes = await prisma.locacao.findMany({
+    const locacao = await prisma.locacao.findUnique({
       where: {
         id: Number(req.params.id),
       },
     });
-    res.status(200).json(locacoes);
+
+    if (!locacao)
+      return res.status(404).json({ erro: "Locação não encontrada" });
+
+    res.status(200).json(locacao);
   } catch (error) {
     res.status(500).json({ erro: error });
   }
@@ -170,7 +175,7 @@ router.get("/:id", async (req, res) => {
  *       400:
  *         description: Filme não disponível
  *       404:
- *         description: Filme não encontrado
+ *         description: Filme/Cliente não encontrado
  *       500:
  *         description: Erro interno do servidor
  */
@@ -185,6 +190,14 @@ router.post("/", async (req: any, res: any) => {
 
     const { clienteId, filmeId, dataLocacao, dataDevolucao, valor } =
       result.data;
+
+    const cliente = await prisma.cliente.findUnique({
+      where: { id: clienteId },
+    });
+
+    if (!cliente) {
+      return res.status(404).json({ erro: "Cliente não encontrado" });
+    }
 
     const filme = await prisma.filme.findUnique({
       where: { id: filmeId },
@@ -227,7 +240,7 @@ router.post("/", async (req: any, res: any) => {
  * @swagger
  * /locacoes/{id}:
  *   patch:
- *     summary: Finaliza uma locação e marca o filme como disponível
+ *     summary: Finaliza uma locação (adiciona data de devolução) e marca o filme como disponível
  *     tags: [Locações]
  *     parameters:
  *       - in: path
@@ -285,7 +298,7 @@ router.patch("/:id", async (req: any, res: any) => {
  * @swagger
  * /locacoes/{id}:
  *   delete:
- *     summary: Remove uma locação
+ *     summary: Remove uma locação e marca o filme locado como disponível
  *     tags: [Locações]
  *     parameters:
  *       - in: path
@@ -305,19 +318,41 @@ router.patch("/:id", async (req: any, res: any) => {
  *       500:
  *         description: Erro interno do servidor
  */
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req: any, res: any) => {
   try {
     const { id } = req.params;
 
-    await prisma.locacao.delete({
+    const locacao = await prisma.locacao.findUnique({
       where: {
         id: Number(id),
       },
     });
 
-    res.status(200).json(id);
+    if (!locacao) {
+      return res.status(404).json({ erro: "Locação não encontrada" });
+    }
+
+    await prisma.$transaction([
+      prisma.locacao.delete({
+        where: {
+          id: Number(id),
+        },
+      }),
+      prisma.filme.update({
+        where: {
+          id: locacao.filmeId,
+        },
+        data: {
+          disponivel: true,
+        },
+      }),
+    ]);
+
+    res
+      .status(200)
+      .json({ mensagem: "Locação removida e filme disponibilizado", id });
   } catch (error) {
-    res.status(500).json({ erro: error });
+    res.status(500).json({ erro: "Erro ao remover locação", detalhe: error });
   }
 });
 

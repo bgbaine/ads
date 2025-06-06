@@ -118,6 +118,48 @@ router.get("/indisponiveis", async (req, res) => {
 
 /**
  * @swagger
+ * /filmes/{id}:
+ *   get:
+ *     summary: Lista apenas um filme específico
+ *     tags: [Filmes]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID do filme a ser buscado
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Filme retornado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/FilmeModel'
+ *       500:
+ *         description: Erro interno do servidor
+ */
+router.get("/:id", async (req: any, res: any) => {
+  try {
+    const filme = await prisma.filme.findUnique({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
+
+    if (!filme)
+      return res.status(404).json({ erro: "Filme não encontrado" });
+
+    res.status(200).json(filme);
+  } catch (error) {
+    res.status(500).json({ erro: error });
+  }
+});
+
+/**
+ * @swagger
  * /filmes:
  *   post:
  *     summary: Cria um novo filme
