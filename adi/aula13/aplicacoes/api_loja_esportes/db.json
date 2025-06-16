@@ -1,0 +1,260 @@
+{
+  "produtos": [
+    {
+      "id": "a4g6",
+      "nome": "Bola",
+      "marca": "Adidas",
+      "categoria": "Futebol",
+      "quant": 12,
+      "preco": 92.5
+    },
+    {
+      "id": "b1x9",
+      "nome": "Chuteira",
+      "marca": "Nike",
+      "categoria": "Futebol",
+      "quant": 8,
+      "preco": 219.9
+    },
+    {
+      "id": "c3z7",
+      "nome": "Raquete",
+      "marca": "Wilson",
+      "categoria": "Tênis",
+      "quant": 5,
+      "preco": 350
+    },
+    {
+      "id": "d5q2",
+      "nome": "Camisa Oficial",
+      "marca": "Puma",
+      "categoria": "Futebol",
+      "quant": 10,
+      "preco": 199.9
+    },
+    {
+      "id": "e6r4",
+      "nome": "Luvas de Goleiro",
+      "marca": "Adidas",
+      "categoria": "Futebol",
+      "quant": 6,
+      "preco": 129.5
+    },
+    {
+      "id": "f2m1",
+      "nome": "Shorts",
+      "marca": "Umbro",
+      "categoria": "Futebol",
+      "quant": 15,
+      "preco": 89.99
+    },
+    {
+      "id": "g8t3",
+      "nome": "Touca de Natação",
+      "marca": "Speedo",
+      "categoria": "Natação",
+      "quant": 20,
+      "preco": 45
+    },
+    {
+      "id": "h4b6",
+      "nome": "Óculos de Natação",
+      "marca": "Speedo",
+      "categoria": "Natação",
+      "quant": 12,
+      "preco": 78.8
+    },
+    {
+      "id": "i1c8",
+      "nome": "Bermuda de Compressão",
+      "marca": "Nike",
+      "categoria": "Corrida",
+      "quant": 9,
+      "preco": 139.9
+    },
+    {
+      "id": "j7v2",
+      "nome": "Meião",
+      "marca": "Adidas",
+      "categoria": "Futebol",
+      "quant": 30,
+      "preco": 39.9
+    },
+    {
+      "id": "k2p5",
+      "nome": "Top Fitness",
+      "marca": "Puma",
+      "categoria": "Fitness",
+      "quant": 14,
+      "preco": 74.9
+    },
+    {
+      "id": "l5y9",
+      "nome": "Legging",
+      "marca": "Nike",
+      "categoria": "Fitness",
+      "quant": 7,
+      "preco": 149.9
+    },
+    {
+      "id": "m3d6",
+      "nome": "Jaqueta Corta-Vento",
+      "marca": "Adidas",
+      "categoria": "Corrida",
+      "quant": 4,
+      "preco": 279.99
+    },
+    {
+      "id": "n9f1",
+      "nome": "Mochila Esportiva",
+      "marca": "Reebok",
+      "categoria": "Acessórios",
+      "quant": 11,
+      "preco": 159.9
+    },
+    {
+      "id": "o6w4",
+      "nome": "Tênis de Corrida",
+      "marca": "Asics",
+      "categoria": "Corrida",
+      "quant": 6,
+      "preco": 399.9
+    },
+    {
+      "id": "p8k3",
+      "nome": "Garrafa Térmica",
+      "marca": "Nike",
+      "categoria": "Acessórios",
+      "quant": 25,
+      "preco": 59.9
+    },
+    {
+      "id": "q7n2",
+      "nome": "Caneleira",
+      "marca": "Umbro",
+      "categoria": "Futebol",
+      "quant": 16,
+      "preco": 49.9
+    },
+    {
+      "id": "r3e7",
+      "nome": "Bola de Basquete",
+      "marca": "Spalding",
+      "categoria": "Basquete",
+      "quant": 10,
+      "preco": 180
+    },
+    {
+      "id": "s5u5",
+      "nome": "Coqueteleira",
+      "marca": "Integralmedica",
+      "categoria": "Suplementos",
+      "quant": 18,
+      "preco": 29.9
+    },
+    {
+      "id": "t1h2",
+      "nome": "Squeeze",
+      "marca": "Adidas",
+      "categoria": "Acessórios",
+      "quant": 20,
+      "preco": 19.9
+    },
+    {
+      "id": "u4j8",
+      "nome": "Kit de Pesos",
+      "marca": "Acte",
+      "categoria": "Fitness",
+      "quant": 5,
+      "preco": 299.9
+    },
+    {
+      "id": "v2a3",
+      "nome": "Elástico Extensor",
+      "marca": "LiveUp",
+      "categoria": "Fitness",
+      "quant": 13,
+      "preco": 42
+    },
+    {
+      "id": "w6g9",
+      "nome": "Bola de Vôlei",
+      "marca": "Penalty",
+      "categoria": "Vôlei",
+      "quant": 9,
+      "preco": 119
+    },
+    {
+      "id": "x3l5",
+      "nome": "Tênis Casual",
+      "marca": "Puma",
+      "categoria": "Casual",
+      "quant": 6,
+      "preco": 229.9
+    },
+    {
+      "id": "y8s1",
+      "nome": "Manguito",
+      "marca": "Nike",
+      "categoria": "Corrida",
+      "quant": 17,
+      "preco": 49.9
+    },
+    {
+      "id": "z5m4",
+      "nome": "Joelheira",
+      "marca": "Kestal",
+      "categoria": "Fitness",
+      "quant": 8,
+      "preco": 79.9
+    },
+    {
+      "id": "aa2d",
+      "nome": "Corda de Pular",
+      "marca": "Everlast",
+      "categoria": "Fitness",
+      "quant": 15,
+      "preco": 39.99
+    },
+    {
+      "id": "bb7f",
+      "nome": "Regata Dry Fit",
+      "marca": "Reebok",
+      "categoria": "Corrida",
+      "quant": 10,
+      "preco": 59.9
+    },
+    {
+      "id": "cc6x",
+      "nome": "Tênis de Basquete",
+      "marca": "Nike",
+      "categoria": "Basquete",
+      "quant": 4,
+      "preco": 499.9
+    },
+    {
+      "id": "dd1b",
+      "nome": "Bola de Handebol",
+      "marca": "Penalty",
+      "categoria": "Handebol",
+      "quant": 7,
+      "preco": 129
+    },
+    {
+      "id": "ee9t",
+      "nome": "Camisa Térmica",
+      "marca": "Adidas",
+      "categoria": "Corrida",
+      "quant": 6,
+      "preco": 119.9
+    },
+    {
+      "id": "7d3e",
+      "nome": "Chuteira",
+      "marca": "Adidas",
+      "categoria": "Futebol",
+      "quant": 10,
+      "preco": 390
+    }
+  ]
+}
