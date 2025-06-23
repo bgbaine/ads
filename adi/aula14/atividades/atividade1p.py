@@ -1,3 +1,4 @@
+from config import DEMO
 from helpers import *
 
 
@@ -12,8 +13,7 @@ def main():
             nome_jogador = input("Digite seu nome: ")
             limpar_tela()
             desenhar_tabuleiro_jogador()
-            adicionar_navios_jogador_mod()
-            # adicionar_navios_jogador()
+            adicionar_navios_jogador_mod() if DEMO else adicionar_navios_jogador()
             adicionar_navios_cpu()
 
             while MUNICAO_JOGADOR > 0 and MUNICAO_CPU > 0:
@@ -21,8 +21,7 @@ def main():
                 print("=== SEU TABULEIRO ===")
                 desenhar_tabuleiro_jogador()
                 print("=== ATAQUES NA CPU ===")
-                desenhar_tabuleiro_cpu_mod()
-                # desenhar_tabuleiro_cpu()
+                desenhar_tabuleiro_cpu_mod() if DEMO else desenhar_tabuleiro_cpu()
                 atacar_posicao_jogador(nome_jogador)
                 if obter_ganhador(nome_jogador):
                     break

@@ -1,3 +1,4 @@
+from config import DEMO
 import random
 import csv
 import time
@@ -110,7 +111,9 @@ def adicionar_navio(
 
     contagem = 0
     while contagem < quantidade:
-        print(f"Coloque {nome} {contagem + 1} de {quantidade}")
+        print(f"Coloque {nome} {navio} {contagem + 1} de {quantidade}") if isinstance(
+            navio, str
+        ) else print(f"Coloque {nome} {contagem + 1} de {quantidade}")
         try:
             linha = int(input("Digite a linha inicial (0-14): "))
             coluna = int(input("Digite a coluna inicial (0-14): "))
@@ -276,9 +279,7 @@ def atacar_posicao_jogador(nome_jogador):
         print("=== SEU TABULEIRO ===")
         desenhar_tabuleiro_jogador()
         print("=== ATAQUES NA CPU ===")
-        # desenhar_tabuleiro_cpu()
-        desenhar_tabuleiro_cpu_mod()
-
+        desenhar_tabuleiro_cpu_mod() if DEMO else desenhar_tabuleiro_cpu()
         exibir_estado_jogador(nome_jogador)
 
         try:
@@ -315,16 +316,14 @@ def atacar_posicao_jogador(nome_jogador):
 
                 print()
                 print("=== ATAQUES NA CPU ===")
-                # desenhar_tabuleiro_cpu()
-                desenhar_tabuleiro_cpu_mod()
+                desenhar_tabuleiro_cpu_mod() if DEMO else desenhar_tabuleiro_cpu()
                 pressione_enter()
                 limpar_tela()
                 break
 
             print()
             print("=== ATAQUES NA CPU ===")
-            # desenhar_tabuleiro_cpu()
-            desenhar_tabuleiro_cpu_mod()
+            desenhar_tabuleiro_cpu_mod() if DEMO else desenhar_tabuleiro_cpu()
             pressione_enter()
             limpar_tela()
 
