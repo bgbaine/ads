@@ -19,7 +19,6 @@ def graf_caros(page):
     if not pratos:
         return ft.Text("Nenhum dado disponível.")
 
-    # Ordena por preço desc e pega top 10
     pratos_ordenados = sorted(pratos, key=lambda p: p.get("preco", 0), reverse=True)[:10]
 
     largura_max = 800
