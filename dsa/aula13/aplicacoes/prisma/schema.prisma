@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+  id           Int         @id @default(autoincrement())
+  nome         String      @db.VarChar(40)
+  turma        String      @db.VarChar(6)
+  obs          String?     @db.VarChar(255)
+  responsavel  String      @db.VarChar(40)
+  email        String      @db.VarChar(100)
+  saldo        Decimal     @db.Decimal(9,2) @default(0)
+  usuario      Usuario     @relation(fields: [usuarioId], references: [id])
+  usuarioId    String      @db.VarChar(36)
+  depositos    Deposito[]
+  vendas       Venda[]
+  @@map("alunos")
+}
+
+model Produto {
+  id           Int         @id @default(autoincrement())
+  nome         String      @db.VarChar(30)
+  quant        Int         @db.SmallInt
+  preco        Decimal     @db.Decimal(9,2)
+  vendas       Venda[]
+  @@map("produtos")
+}
+
+model Deposito {
+  id             Int         @id @default(autoincrement())
+  aluno          Aluno       @relation(fields: [alunoId], references: [id])
+  alunoId        Int
+  tipo           Tipos
+  valor          Decimal     @db.Decimal(9, 2)
+  data           DateTime    @default(now())
+  @@map("depositos")
+}
+
+enum Tipos {
+  PIX
+  Cartao
+  Dinheiro
+}
+
+model Venda {
+  id             Int         @id @default(autoincrement())
+  aluno          Aluno       @relation(fields: [alunoId], references: [id])
+  alunoId        Int
+  produto        Produto     @relation(fields: [produtoId], references: [id])
+  produtoId      Int
+  quant          Int         @db.SmallInt
+  preco          Decimal     @db.Decimal(9, 2)
+  data           DateTime    @default(now())
+  @@map("vendas")
+}
+
+model Usuario {
+  id            String       @db.VarChar(36) @id @default(uuid())
+  nome          String       @db.VarChar(50)
+  email         String       @db.VarChar(100) @unique()
+  senha         String       @db.VarChar(60)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  alunos        Aluno[]
+  logs          Log[]
+  @@map("usuarios")
+}
+
+model Log {
+  id            Int         @id @default(autoincrement())
+  usuario       Usuario     @relation(fields: [usuarioId], references: [id])
+  usuarioId     String      @db.VarChar(36)
+  descricao     String      @db.VarChar(60)
+  complemento   String      @db.VarChar(200)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  @@map("logs")
+}

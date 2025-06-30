@@ -27,7 +27,7 @@ def cad_pratos(page):
             ft.DataColumn(ft.Text("Preço R$")),
         ],
         rows=[],
-        column_spacing=20
+        column_spacing=150
     )
 
     def carregar_pratos_api():

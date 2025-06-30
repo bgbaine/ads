@@ -5,7 +5,7 @@ from telas.graf_caros import graf_caros
 from telas.pesq_cat_prec import pesq_cat_prec
 
 def main(page: ft.Page):
-    page.title = "Gestão de Restaurante"
+    page.title = "Gestão do Restaurante Avenida"
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 20
 
@@ -38,7 +38,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Column([
-            ft.Text("Gestão de Restaurante - Cadastro de Pratos", size=30, weight="bold", text_align="center"),
+            ft.Text("Restaurante Avenida", size=30, weight="bold", text_align="center"),
             nav_buttons,
             ft.Divider(),
             conteudo_dinamico,
