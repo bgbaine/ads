@@ -1,76 +1,50 @@
 import flet as ft
 import requests
 
-API_URL = "http://localhost:3000/produtos"
+API_URL = "http://localhost:3000/pratos"
 
 def graf_caros(page):
-
-    def obter_produtos_api():
+    def obter_pratos_api():
         try:
             response = requests.get(API_URL)
             response.raise_for_status()
             return response.json()
         except Exception as err:
-            page.snack_bar = ft.SnackBar(ft.Text(f"Erro ao carregar produtos: {err}"))
+            page.snack_bar = ft.SnackBar(ft.Text(f"Erro ao carregar pratos: {err}"))
             page.snack_bar.open = True
             page.update()
             return []
 
-    produtos = obter_produtos_api()
-
-    if not produtos:
+    pratos = obter_pratos_api()
+    if not pratos:
         return ft.Text("Nenhum dado disponível.")
 
-    # Ordena produtos por preço (decrescente) e pega os 10 mais caros
-    produtos_ordenados = sorted(produtos, key=lambda p: p['preco'], reverse=True)[:10]
-
-    # Define cores para as barras
-    cores = [
-        ft.Colors.RED,
-        ft.Colors.ORANGE,
-        ft.Colors.YELLOW,
-        ft.Colors.GREEN,
-        ft.Colors.CYAN,
-        ft.Colors.BLUE,
-        ft.Colors.PURPLE,
-        ft.Colors.PINK,
-        ft.Colors.AMBER,
-        ft.Colors.BROWN,
-    ]
+    # Ordena por preço desc e pega top 10
+    pratos_ordenados = sorted(pratos, key=lambda p: p.get("preco", 0), reverse=True)[:10]
 
     largura_max = 800
-    maior_preco = produtos_ordenados[0]['preco']
+    maior_preco = max(p.get("preco", 0) for p in pratos_ordenados)
 
     linhas = []
-
-    for i, produto in enumerate(produtos_ordenados):
-        nome = produto['nome']
-        preco = produto['preco']
-        cor = cores[i % len(cores)]
+    for p in pratos_ordenados:
+        nome = p.get("nome", "Indefinido")
+        preco = p.get("preco", 0)
         largura_barra = (preco / maior_preco) * largura_max
-
         barra = ft.Container(
             width=largura_barra,
             height=30,
-            bgcolor=cor,
+            bgcolor=ft.Colors.RED_600,
             border_radius=5,
         )
-
-        linha = ft.Row(
-            [
-                ft.Text(nome, width=200),
-                barra,
-                ft.Text(f"R$ {preco:,.2f}", width=120, text_align=ft.TextAlign.RIGHT)
-            ],
-            alignment=ft.MainAxisAlignment.START,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-            spacing=10
-        )
-
+        linha = ft.Row([
+            ft.Text(nome, width=250),
+            barra,
+            ft.Text(f"R$ {preco:.2f}", width=100, text_align=ft.TextAlign.RIGHT),
+        ], alignment=ft.MainAxisAlignment.START, vertical_alignment=ft.CrossAxisAlignment.CENTER, spacing=10)
         linhas.append(linha)
 
     return ft.Column(
-        [ft.Text("Top 10 Produtos Mais Caros", size=22, weight="bold")] + linhas,
+        [ft.Text("Top 10 Pratos Mais Caros", size=22, weight="bold")] + linhas,
         spacing=10,
-        scroll=ft.ScrollMode.AUTO
+        scroll=ft.ScrollMode.AUTO,
     )
