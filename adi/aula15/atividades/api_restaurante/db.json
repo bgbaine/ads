@@ -272,6 +272,48 @@
       "categoria": "Prato Principal",
       "tempo_preparo": 60,
       "preco": 24.99
+    },
+    {
+      "id": "e06c",
+      "nome": "Strogonoff de Carne",
+      "categoria": "Prato Principal",
+      "tempo_preparo": 90,
+      "preco": 49.99
+    },
+    {
+      "id": "5f94",
+      "nome": "Bife a Cavalo",
+      "categoria": "Prato Principal",
+      "tempo_preparo": 85,
+      "preco": 39.9
+    },
+    {
+      "id": "a5ca",
+      "nome": "Bife à Milanesa",
+      "categoria": "Prato Principal",
+      "tempo_preparo": 35,
+      "preco": 49.9
+    },
+    {
+      "id": "bce4",
+      "nome": "Suco de Melancia",
+      "categoria": "Bebida",
+      "tempo_preparo": 5,
+      "preco": 9.99
+    },
+    {
+      "id": "e616",
+      "nome": "Suco de Uva",
+      "categoria": "Bebida",
+      "tempo_preparo": 5,
+      "preco": 7.99
+    },
+    {
+      "id": "03f1",
+      "nome": "Risoto de Camarão",
+      "categoria": "Prato Principal",
+      "tempo_preparo": 60,
+      "preco": 117.99
     }
   ]
 }
