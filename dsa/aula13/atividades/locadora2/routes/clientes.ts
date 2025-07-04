@@ -138,7 +138,7 @@ router.post("/", verificaToken, async (req, res) => {
     const usuarioNome = req.userLogadoNome as string
 
     const descricao = `Criacao de Cliente`
-    const complemento = `Cliente de ID: #${usuarioNome}`
+    const complemento = `Cliente de ID: #${cliente.id}`
 
     const log = await prisma.log.create({
       data: { descricao, complemento, usuarioId: usuarioId }

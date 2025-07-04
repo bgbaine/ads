@@ -233,7 +233,7 @@ router.post("/redefinirsenha/validar", async (req: any, res: any) => {
       },
     });
 
-    const descricao = `Soliticao de redefinicao de senha`;
+    const descricao = `Senha redefinida`;
     const complemento = `Usuario: #${usuario.id}`;
 
     const log = await prisma.log.create({

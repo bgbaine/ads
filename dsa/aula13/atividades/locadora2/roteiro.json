@@ -1,0 +1,80 @@
+usuarios
+/usuarios - get
+/usuarios - post
+req
+{
+    "nome": "Eose Jervantes",
+    "email": "eose@email.com",
+    "senha": "123456Aa$"
+}
+
+logs-fracasso
+/login - post
+req
+{
+    "email": "cose@email.com",
+    "senha": "123456Aa$"
+}
+
+logs-sucesso
+/clientes - post (verificatoken)
+req
+{
+    "nome": "Bernardo",
+    "telefone": "5553981640674",
+    "dataNascimento": "2000-05-15T00:00:00.000Z",
+    "email": "bernardo@email.com"
+}
+/clientes/{id} - put (verificatoken)
+req
+{
+    "nome": "Bernardo",
+    "telefone": "5553981640674",
+    "dataNascimento": "2000-05-15T00:00:00.000Z",
+    "email": "email@email.com"
+}
+/clientes/{id} - delete (verificatoken)
+/redefinirsenha - post
+{
+    "email": "cose@email.com"
+}
+/redefinirsenha/validar - post
+{
+    "email": "cose@email.com",
+    "senha": "123456Aa$",
+    "codigo": "594364"
+}
+
+seguranca
+/seguranca/backup - get
+/seguranca/restore - post
+
+outros
+/login - post - bem vindo
+res
+{
+    "id": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+    "nome": "Cose Jervantes",
+    "email": "cose@email.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTG9nYWRvSWQiOiI0YjI1MWVjYy1jMmExLTQzZTgtYTM3ZS1jZGRlOGI2Y2M1ZDUiLCJ1c2VyTG9nYWRvTm9tZSI6IkNvc2UgSmVydmFudGVzIiwiaWF0IjoxNzUxNjQwNjk5LCJleHAiOjE3NTE2NDQyOTl9.bvgZhlN_JJmm1GtwCKqLyad-ghw_LaNCcaJIkdD0kek",
+    "mensagem": "Bem-vindo, Cose Jervantes. Seu último acesso foi em 7/4/2025, 11:31:57 AM"
+}
+/redefinirsenha - post - enviar email
+mailtrap
+Locadora Avenida - Recuperação de Senha
+Olá, Cose Jervantes.
+
+Recebemos uma solicitação para redefinir sua senha.
+
+Este é o seu código de verificação:
+
+594364
+Este código é válido por 15 minutos.
+
+Se você não solicitou a redefinição de senha, ignore este e-mail.
+
+
+Atenciosamente,
+
+Equipe Locadora Avenida
+/redefinirsenha/validar - post - validar token

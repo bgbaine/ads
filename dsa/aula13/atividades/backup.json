@@ -1,0 +1,111 @@
+{
+  "usuarios": [
+    {
+      "id": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "nome": "Cose Jervantes",
+      "email": "cose@email.com",
+      "senha": "$2b$12$C28BQgiK6D4ieMVvxAx9tuxUHKpXxXnAuQzLzM4OarhGe5yEzVk7O",
+      "createdAt": "2025-07-04T14:31:37.473Z",
+      "updatedAt": "2025-07-04T14:51:39.372Z",
+      "ultimoAcesso": "2025-07-04T14:51:39.000Z",
+      "codigoRecuperacao": null
+    },
+    {
+      "id": "eda180d6-b486-409b-84ec-822138721c34",
+      "nome": "Jose Cervantes",
+      "email": "jose@email.com",
+      "senha": "$2b$12$yeKhsWK9Rm86m6hFOMsOPesPkQpcidcAUBILnKiF6XDsc0C8VcA7K",
+      "createdAt": "2025-07-04T02:44:41.755Z",
+      "updatedAt": "2025-07-04T14:31:49.944Z",
+      "ultimoAcesso": "2025-07-04T14:31:50.000Z",
+      "codigoRecuperacao": null
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Bernardo",
+      "email": "bernardo@email.com",
+      "telefone": "5553981640674",
+      "dataNascimento": "2000-05-15T00:00:00.000Z",
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5"
+    }
+  ],
+  "filmes": [],
+  "locacoes": [],
+  "logs": [
+    {
+      "id": 1,
+      "usuarioId": "eda180d6-b486-409b-84ec-822138721c34",
+      "descricao": "Soliticao de redefinicao de senha",
+      "complemento": "Usuario: #eda180d6-b486-409b-84ec-822138721c34",
+      "createdAt": "2025-07-04T02:48:20.996Z",
+      "updatedAt": "2025-07-04T02:48:20.996Z"
+    },
+    {
+      "id": 2,
+      "usuarioId": "eda180d6-b486-409b-84ec-822138721c34",
+      "descricao": "Soliticao de redefinicao de senha",
+      "complemento": "Usuario: #eda180d6-b486-409b-84ec-822138721c34",
+      "createdAt": "2025-07-04T02:50:01.602Z",
+      "updatedAt": "2025-07-04T02:50:01.602Z"
+    },
+    {
+      "id": 3,
+      "usuarioId": "eda180d6-b486-409b-84ec-822138721c34",
+      "descricao": "Soliticao de redefinicao de senha",
+      "complemento": "Usuario: #eda180d6-b486-409b-84ec-822138721c34",
+      "createdAt": "2025-07-04T02:51:48.708Z",
+      "updatedAt": "2025-07-04T02:51:48.708Z"
+    },
+    {
+      "id": 4,
+      "usuarioId": "eda180d6-b486-409b-84ec-822138721c34",
+      "descricao": "Soliticao de redefinicao de senha",
+      "complemento": "Usuario: #eda180d6-b486-409b-84ec-822138721c34",
+      "createdAt": "2025-07-04T02:52:31.401Z",
+      "updatedAt": "2025-07-04T02:52:31.401Z"
+    },
+    {
+      "id": 5,
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "descricao": "Criacao de Cliente",
+      "complemento": "Cliente de ID: #Cose Jervantes",
+      "createdAt": "2025-07-04T14:46:02.667Z",
+      "updatedAt": "2025-07-04T14:46:02.667Z"
+    },
+    {
+      "id": 6,
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "descricao": "Criacao de Cliente",
+      "complemento": "Cliente de ID: #3",
+      "createdAt": "2025-07-04T14:46:53.736Z",
+      "updatedAt": "2025-07-04T14:46:53.736Z"
+    },
+    {
+      "id": 7,
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "descricao": "Atualizacao de Cliente",
+      "complemento": "Cliente de ID: #3",
+      "createdAt": "2025-07-04T14:49:45.419Z",
+      "updatedAt": "2025-07-04T14:49:45.419Z"
+    },
+    {
+      "id": 8,
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "descricao": "Exclusão do Cliente",
+      "complemento": "Cliente de ID: #3",
+      "createdAt": "2025-07-04T14:51:02.371Z",
+      "updatedAt": "2025-07-04T14:51:02.371Z"
+    },
+    {
+      "id": 9,
+      "usuarioId": "4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5",
+      "descricao": "Tentativa de acesso ao sistema",
+      "complemento": "Usuário: 4b251ecc-c2a1-43e8-a37e-cdde8b6cc5d5 - Cose Jervantes",
+      "createdAt": "2025-07-04T14:51:23.808Z",
+      "updatedAt": "2025-07-04T14:51:23.808Z"
+    }
+  ],
+  "dataBackup": "2025-07-04T14:54:38.269Z"
+}
