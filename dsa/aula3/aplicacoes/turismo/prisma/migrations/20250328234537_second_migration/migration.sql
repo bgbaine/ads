@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE `viagens` ADD COLUMN `estrelas` INTEGER NOT NULL DEFAULT 0,
-    ADD COLUMN `hotel` VARCHAR(40) NOT NULL DEFAULT '';
