@@ -30,9 +30,9 @@ def bfs(inicio, objetivo):
     visitados = []
 
     while len(fila) > 0:
-        caminho = fila[0]
-        fila = fila[1:]
-        atual = caminho[-1]
+        caminho = fila[0]   # Pelotas
+        fila = fila[1:]     # []
+        atual = caminho[-1] # Pelotas
 
         if atual == objetivo:
             return caminho, len(caminho) - 1
