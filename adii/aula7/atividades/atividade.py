@@ -91,30 +91,47 @@ class Arvore:
 
 
 class Lista:
-    def __init__(self):
+    def __init__(self, otimizada=False):
         self.raiz = None
         self.ultimo = None
+        self.otimizada = otimizada
 
     def inserir(self, valor):
-        # Lista nao possui raiz
-        if self.raiz is None:
-            # Criar no raiz
-            self.raiz = NodeLista(valor)
-            return
-
-        # Existindo raiz, o no atual sera o da raiz
-        no_atual = self.raiz
-
-        while True:
-            # No atual nao aponta para nenhum outro
-            if no_atual.proximo == None:
-                # No atual aponta para o valor a ser inserido
-                no_atual.proximo = NodeLista(valor)
+        if self.otimizada:
+            # Lista nao possui raiz
+            if self.raiz is None:
+                # Criar no raiz e tornar ele o ultimo da lista
+                self.raiz = NodeLista(valor)
+                self.ultimo = self.raiz
                 return
-            # No atual aponta para algum outro no
-            else:
-                # No atual passa a ser o no que o atual esta apontando
-                no_atual = no_atual.proximo
+
+            # Existindo raiz, o no atual sera o ultimo no da lista
+            no_atual = self.ultimo
+
+            # Cria novo no, linka ele ao atual e torna o novo no o novo ultimo no da lista
+            no_atual.proximo = NodeLista(valor)
+            self.ultimo = no_atual.proximo
+
+        else:
+            # Lista nao possui raiz
+            if self.raiz is None:
+                # Criar no raiz
+                self.raiz = NodeLista(valor)
+                return
+
+            # Existindo raiz, o no atual sera o da raiz
+            no_atual = self.raiz
+
+            while True:
+                # No atual nao aponta para nenhum outro
+                if no_atual.proximo == None:
+                    # No atual aponta para o valor a ser inserido
+                    no_atual.proximo = NodeLista(valor)
+                    return
+                # No atual aponta para algum outro no
+                else:
+                    # No atual passa a ser o no que o atual esta apontando
+                    no_atual = no_atual.proximo
 
     def buscar(self, valor):
         # O no atual e a raiz
@@ -135,49 +152,6 @@ class Lista:
 
         # Caso nao tenha sido encontrado ate aqui, o valor nao esta na lista
         return False
-
-
-class ListaOtimizada:
-    def __init__(self):
-        # Implementar ultimo no para facilitar insercao
-        self.raiz = None
-        self.ultimo = None
-
-    def inserir(self, valor):
-        # Lista nao possui raiz
-        if self.raiz is None:
-            # Criar no raiz e tornar ele o ultimo da lista
-            self.raiz = NodeLista(valor)
-            self.ultimo = self.raiz
-            return
-
-        # Existindo raiz, o no atual sera o ultimo no da lista
-        no_atual = self.ultimo
-
-        # Cria novo no, linka ele ao atual e torna o novo no o novo ultimo no da lista
-        no_atual.proximo = NodeLista(valor)
-        self.ultimo = no_atual.proximo
-
-    def buscar(self, valor):
-        # O no atual e a raiz
-        no_atual = self.raiz
-
-        # Caso nao haja raiz, a lista esta vazia e portanto o valor nao esta nela
-        if no_atual is None:
-            return False
-
-        # Enquanto nao chegarmos no final da listat
-        while no_atual is not None:
-            # Se o valor do no atual for o procurado
-            if valor == no_atual.valor:
-                return True
-            # No atual nao possui o valor procurado, passamos para o no seguinte
-            else:
-                no_atual = no_atual.proximo
-
-        # Caso nao tenha sido encontrado ate aqui, o valor nao esta na lista
-        return False
-
 
 def testar_arvore(n=100, valores_busca=None, seed_criacao=50, seed_busca=42, nome_arquivo=None):
     # Se arquivo foi inserido, extrair valores do arquivo
@@ -247,10 +221,7 @@ def testar_lista(n=100, valores_busca=None, seed_criacao=50, seed_busca=42, nome
         valores = [random.randint(1, 999) for _ in range(n)]
 
     # Instanciar a lista
-    if otimizada:
-        lista = ListaOtimizada()
-    else:
-        lista = Lista()
+    lista = Lista(otimizada)
 
     # Construir lista
     inicio_lista = time.perf_counter()
